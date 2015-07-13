@@ -4,7 +4,9 @@ Norm Monitoring on Dynamic Electronic Institutions project
 ## Installation
 ### Requirements
 [Leinegen](https://github.com/technomancy/leiningen)
+
 [MongoDB](https://www.mongodb.org/)
+
 [ALIVE Framework](http://sourceforge.net/projects/ict-alive/)
 ### Configuration
 Configure mongodb with user **nomodei** password **1981zemogi** and database **nomodei**
@@ -18,6 +20,7 @@ db.addUser( { "user" : "nomodei",
 ```
 ## Usage
 lein clean
+
 lein ring server
 
 Initial page shows testing information.
