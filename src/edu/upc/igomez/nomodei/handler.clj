@@ -1,6 +1,5 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Copyright (c) 2013 SUPERHUB - SUstainable and PERsuasive Human Users moBility
-;                    http://www.superhub-project.eu/ 
+; Copyright (c) 2015 Ignasi Gómez Sebastià
 ; 
 ; All rights reserved. This program and the accompanying materials
 ; are made available under the terms of the Eclipse Public License v1.0
@@ -8,10 +7,10 @@
 ; http://www.eclipse.org/legal/epl-v10.html
 ; 
 ; Contributors:
-;     Ignasi Gómez-Sebastià - Development of policy encoder server skeleton 
-;                             (2013-03-24) (yy-mm-dddd)
+;     Ignasi Gómez-Sebastià - First Tests (2015-07-17) (yyyy-mm-dd)
+;                             
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(ns edu.upc.igomez.nomodei.handler
+
    (:use compojure.core
         [clojure.tools.logging :only (info error)])
   (:require [compojure.handler :as handler]

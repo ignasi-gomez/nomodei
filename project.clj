@@ -25,6 +25,7 @@
                   [net.sf.ictalive/normInstances "1.0.0"]
                   [org.eclipse.emf/org.eclipse.emf.ecore "2.9.1.v20130827-0309"]
                   [org.eclipse.emf/org.eclipse.emf.common "2.9.1.v20130827-0309"]
+                  [lacij "0.9.0"]
                   [clj-time "0.5.1"]]
   :plugins [[lein-ring "0.8.5"]
             [no-man-is-an-island/lein-eclipse "2.0.0"]]

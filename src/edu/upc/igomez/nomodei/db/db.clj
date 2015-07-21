@@ -1,3 +1,17 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Copyright (c) 2015 Ignasi Gómez Sebastià
+; 
+; All rights reserved. This program and the accompanying materials
+; are made available under the terms of the Eclipse Public License v1.0
+; which accompanies this distribution, and is available at
+; http://www.eclipse.org/legal/epl-v10.html
+; 
+; Contributors:
+;     Ignasi Gómez-Sebastià - Wrapper to mongoDB (2015-07-17) (yyyy-mm-dd)
+;                             
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 (ns edu.upc.igomez.nomodei.db.db
  (:use [clojure.tools.logging :only (info error)])
   (:require [snippets-generic :as cs]
@@ -24,6 +38,18 @@
     (m/make-connection mongo-uri)
     (catch Exception e
       (print mongo-uri))))
+
+(def query-sleep
+  (:query.sleep props))
+
+(def draw-sleep
+  (:draw.sleep props))
+
+(def mock-generate-sleep
+  (:mock-generate.sleep props))
+
+(def font-size
+  (str (:graph.font-size props)))
 
 ;To help identify directory for properties files and content
 (defn db-info
