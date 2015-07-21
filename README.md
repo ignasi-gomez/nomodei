@@ -39,11 +39,17 @@ db.getCollection("time-line-type").insert({"id":0, "type":"Test"});
 db.getCollection("time-line-type”).find()
 ```
 ## Usage
+### Generic test
 lein clean
 
 lein ring server
 
 Initial page shows testing information.
+### Mockup Visualization for provenance event graph-lines
+Run the following command from console:
+```javascript
+lein run -m edu.upc.igomez.nomodei.viz.mockups.timeline
+```
 
 ## Version history
 0.0: Project skeleton stub
