@@ -60,6 +60,8 @@ lein run -m edu.upc.igomez.nomodei.viz.mockups.norm
 
 ## Version history
 0.0: Project skeleton stub
+
 0.1: Mockup Visualization for provenance event graph-lines. Using SWING
+
 0.2: Mockup Visualization for norms. No event based evolution. Using SWING
 
