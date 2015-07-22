@@ -51,6 +51,13 @@ Run the following command from console:
 lein run -m edu.upc.igomez.nomodei.viz.mockups.timeline
 ```
 
+### Mockup Visualization for norm evolution
+Run the following command from console:
+```javascript
+lein run -m edu.upc.igomez.nomodei.viz.mockups.norm
+```
+
+
 ## Version history
 0.0: Project skeleton stub
 0.1: Mockup Visualization for provenance event graph-lines. Using SWING
