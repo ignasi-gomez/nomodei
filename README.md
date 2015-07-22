@@ -65,3 +65,5 @@ lein run -m edu.upc.igomez.nomodei.viz.mockups.norm
 
 0.2: Mockup Visualization for norms. No event based evolution. Using SWING
 
+0.3: Mockup Visualization for norms.Event based evolution. Simple use-case. Using persistent DB to keep track of graph. First data model able to be connected with better visualization components. Using SWING
+

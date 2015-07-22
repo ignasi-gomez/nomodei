@@ -14,7 +14,7 @@
 ;lein run -m edu.upc.igomez.nomodei.viz.mockups.norm
 
 ;(load-file "/Users/igomez/deapt/dea-repo/nomodei/src/edu/upc/igomez/nomodei/viz/mockups/norm.clj")
-;(use 'edu.upc.igomez.nomodei.viz.mockups.timeline)
+;(use 'edu.upc.igomez.nomodei.viz.mockups.norm)
 
 
 (ns edu.upc.igomez.nomodei.viz.mockups.norm
@@ -25,7 +25,8 @@
         lacij.view.graphview
         analemma.xml
         (tikkba swing dom core)
-        tikkba.utils.xml)
+        tikkba.utils.xml
+        clojure.set)
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
             [noir.response :as response]
@@ -83,11 +84,12 @@
 
 (def last-x (atom 10))
 (def last-time (atom 0))
+(def last-time-viz (atom 0))
 (def last-y (atom 120))
 (def last-node (atom (keyword "Norm")))
 
 (defn draw-norm-line
-  [par-event par-line]
+  [par-event par-line norm-id]
   "Draw an event on the time-line"
   (let [g (deref *graph*)
         svgcanvas (:svgcanvas g)
@@ -106,6 +108,11 @@
         inc_y 0
         fill "burlywood"
         _ (info "Drawing: " x " " y " " description " " nodeid " " ancestor)
+        actual-time (tc/to-long (time/now))
+        _ (m/with-mongo db/mongo-conn 
+          (do (m/insert! :norm-instance-graph-node
+                {:norm-instance-id norm-id :x x :y y :description description :nodeid nodeid :ancestor ancestor :active false :timestamp actual-time})
+            ))
     _ (do-batik-update
       g
       (let [g (add-node! g nodeid description :x x :y y :height 100 :width 150 :style {:fill fill :stroke "red"})
@@ -129,6 +136,7 @@
   (do
     (let [records  (m/fetch :norm-state
                             :where {:id norm-id})
+          _ (m/destroy! ::norm-instance-graph-node {:norm-instance-id norm-id}) 
           records (first records)
           norm (:norm records)
           _ (info records)
@@ -138,39 +146,178 @@
           _ (reset! last-node (keyword "Norm"))
           _ (reset! last-x 210)
           _ (reset! last-y 10)
-          _ (doall (map #(draw-norm-line % "Repaired") active))
+          _ (doall (map #(draw-norm-line % "Active" norm-id) active))
 
           violated (:violated records)
           violated (concat [{:event "Violated" :parameters []}] violated)
           _ (reset! last-node (keyword "Norm"))
           _ (reset! last-x 210)
           _ (reset! last-y 210)
-          _ (doall (map #(draw-norm-line % "Violated") violated))
+          _ (doall (map #(draw-norm-line % "Violated" norm-id) violated))
 
           fulfilled (:fulfilled records)
           fulfilled (concat [{:event "Fulfilled" :parameters []}] fulfilled)
           _ (reset! last-node (keyword "Norm"))
           _ (reset! last-x 210)
           _ (reset! last-y 410)
-          _ (doall (map #(draw-norm-line % "Fulfilled") fulfilled))
+          _ (doall (map #(draw-norm-line % "Fulfilled" norm-id) fulfilled))
 
           repaired (:repaired records)
           repaired (concat [{:event "Repaired" :parameters []}] repaired)
           _ (reset! last-node (keyword "Norm"))
           _ (reset! last-x 210)
           _ (reset! last-y 610)
-          _ (doall (map #(draw-norm-line % "Repaired") repaired))
+          _ (doall (map #(draw-norm-line % "Repaired" norm-id) repaired))
 
           compensated (:compensated records)
           compensated (concat [{:event "Compensated" :parameters []}] compensated)
           _ (reset! last-node (keyword "Norm"))
           _ (reset! last-x 210)
           _ (reset! last-y 810)
-          _ (doall (map #(draw-norm-line % "Compensated") compensated))
-
-          
-
+          _ (doall (map #(draw-norm-line % "Compensated" norm-id) compensated))
          ]nil))) 
+  nil)
+
+(defn do-update-node
+  "Updates norm from id"
+  [id norm-id]
+  (info "updating node :" id norm-id)
+  (m/with-mongo db/mongo-conn 
+  (do
+    (m/update! :norm-instance-graph-node 
+                            {:norm-instance-id norm-id
+                            :nodeid id} 
+                           {:$set 
+                            { :active true
+                              :timestamp (tc/to-long (time/now))
+                              }}
+                               :upsert false))))
+  
+(defn update-node
+  "Marks a norm node in green as it just happened. Prepares update by generating list of node-ids to be affected"
+  [norm norm-id]
+  (info "Marking node: " norm)
+  (let [
+        node-event (:event norm)
+        node-params (:parameters norm)
+        node-line ["Active" "Violated" "Fulfilled" "Repaired" "Compensated"]
+        id (into [] (map #(str % node-event (clojure.string/join "-" node-params)) node-line ))
+        _ (info "id " id)
+        _ (doall (map #(do-update-node % norm-id) id))
+  ]nil))
+    
+
+(defn update-norm
+  "Query database looking for events that might cause norm to change"
+  [norm-id]
+  (m/with-mongo db/mongo-conn 
+  (do
+    (let [my-time (deref last-time)
+          actual-time (tc/to-long (time/now))
+          records  (m/fetch :time-line-mock
+                            :where {:time {:$gt my-time}}
+                            :only [:event :parameters])
+          events (map #(dissoc % :_id) records)
+          events (into #{} events)
+         _ (info "Events retrieved:" events)
+         records  (m/fetch :norm-state
+                            :where {:id norm-id})
+          norm (first records)
+          norm-events (concat (:active norm) (:violated norm) (:fulfilled norm) (:repaired norm) (:compensated norm))
+          norm-events (into #{} norm-events)
+          _ (info "Norm events retrieved:" norm-events)
+          match (intersection events norm-events)
+         _ (info "Match " match)
+         _ (doall (map #(update-node %1 norm-id) match))
+         norm-events (into #{} (filter #(contains? %1 :negate)  norm-events))
+         _ (info "Norm anti events retrieved:" norm-events)
+          match (distinct (map #(remove %1 norm-events) events))
+          match (into [] (flatten match))
+         _ (info "Anti Match " match)
+         _ (doall (map #(update-node %1 norm-id) match))
+         _ (reset! last-time actual-time)
+         ]nil)))
+  (Thread/sleep db/query-sleep) 
+  (future (update-norm norm-id))
+  nil)
+
+
+(defn mock-evolve-norm []   
+  "Mock-up of event generation to demonstrate several scenarios"
+  (m/with-mongo db/mongo-conn 
+  (do
+  (m/drop-coll! :time-line-mock)  
+  (Thread/sleep db/mock-generate-sleep) 
+
+  (m/insert! :time-line-mock {:event "Received" :parameters ["Plant1" "WaterMass1"] :description ["Received" "(" "Plant1" "WaterMass1" ")"] :time (tc/to-long (time/now)) :type 5999})
+  (info "Mock Insert" @last-time)
+  (Thread/sleep db/mock-generate-sleep) 
+
+  (m/insert! :time-line-mock {:event "Discharged" :parameters ["Plant1" "WaterMass1"] :description ["Discharged" "(" "Plant1" "WaterMass1" ")"] :time (tc/to-long (time/now)) :type 5999})  
+  (info "Mock Insert" @last-time)
+  (Thread/sleep db/mock-generate-sleep) 
+
+  (m/insert! :time-line-mock {:event "Received" :parameters ["Plant1" "WaterMass2"] :description ["Received" "(" "Plant1" "WaterMass2" ")"] :time (tc/to-long (time/now)) :type 5999})  
+  (info "Mock Insert" @last-time)
+  (Thread/sleep db/mock-generate-sleep) 
+  
+  (m/insert! :time-line-mock {:event "Discharged" :parameters ["Plant1" "WaterMass2"] :description ["Discharged" "(" "Plant1" "WaterMass2" ")"] :time (tc/to-long (time/now)) :type 5999})  
+  (info "Mock Insert" @last-time)
+  (Thread/sleep db/mock-generate-sleep) 
+
+  (m/insert! :time-line-mock {:event "Prospective Promulgation" :parameters ["N1"] :description ["Prospective" "Promulgation" "N1"] :time (tc/to-long (time/now)) :type 6900})  
+  (info "Mock Insert" @last-time)
+  (Thread/sleep db/mock-generate-sleep) 
+
+  (m/insert! :time-line-mock {:event "Received" :parameters ["Plant1" "WaterMass2"] :description ["Received" "(" "Plant1" "WaterMass3" ")"] :time (tc/to-long (time/now)) :type 5999})
+  (info "Mock Insert" @last-time)
+  (Thread/sleep db/mock-generate-sleep) 
+  
+  (m/insert! :time-line-mock {:event "Discharged" :parameters ["Plant1" "WaterMass3"] :description ["Discharged" "(" "Plant1" "WaterMass3" ")"] :time (tc/to-long (time/now)) :type 5999})  
+  (info "Mock Insert" @last-time)
+  (Thread/sleep db/mock-generate-sleep) 
+
+  (m/insert! :time-line-mock {:event "Norm Violation" :parameters ["N1"] :description ["Norm" "Violation" "N1"] :time (tc/to-long (time/now)) :type 8999})  
+  (info "Mock Insert" @last-time)
+  (Thread/sleep db/mock-generate-sleep) 
+
+  (m/insert! :time-line-mock {:event "Sanction" :parameters ["Plant1"] :description ["Sanction" "Plant1"] :time (tc/to-long (time/now)) :type 5999})  
+  (info "Mock Insert" @last-time)
+  (Thread/sleep db/mock-generate-sleep) 
+  ))nil) 
+
+(defn update-norm-viz-node
+  [par-node norm-id]
+  "Redraws a particular node in the norm visualization as it has been updated"
+  (let [g (deref *graph*)
+        active (:active par-node)
+        fill (if active "mediumaquamarine" "burlywood")
+        nodeid (:nodeid par-node)
+        description (:description par-node)
+        x (:x par-node)
+        y (:y par-node)
+    _ (do-batik-update
+      g
+      (let [g (add-node! g nodeid description :x x :y y :height 100 :width 150 :style {:fill fill :stroke "red"})]
+        (reset! *graph* g)))
+  ]
+  nil) nil)
+
+(defn update-norm-viz
+  "Query database looking for events that might cause norm to change"
+  [norm-id]
+  (m/with-mongo db/mongo-conn 
+  (do
+    (let [my-time (deref last-time-viz)
+          actual-time (tc/to-long (time/now))
+          records  (m/fetch :norm-instance-graph-node
+                            :where {:timestamp {:$gt my-time}})
+         _ (info "Nodes retrieved:" records)
+         _ (doall (map #(update-norm-viz-node %1 norm-id) records))
+         _ (reset! last-time-viz actual-time)
+         ]nil)))
+  (Thread/sleep db/query-sleep) 
+  (future (update-norm-viz norm-id))
   nil)
 
 (defn -main []
@@ -185,8 +332,13 @@
         g (build g)
         _ (reset! *graph* g)
         fut (future (query-norm-time-line -1))
+        _ (SwingUtilities/invokeAndWait
+          (fn [] (.setVisible frame true)))
+        _ (Thread/sleep 40000) 
+        fut (future (mock-evolve-norm))
+        fut (future (update-norm -1))
+        fut (future (update-norm-viz -1))
         ]
-    (SwingUtilities/invokeAndWait
-     (fn [] (.setVisible frame true)))))
+    ))
 
 
