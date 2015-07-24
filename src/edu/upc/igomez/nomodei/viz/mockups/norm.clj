@@ -42,15 +42,15 @@
            (org.apache.batik.swing JSVGCanvas JSVGScrollPane)
            (java.awt Component BorderLayout FlowLayout)))
 
-;db.getCollection("norm-state").find({"id":-1}).pretty()
+;db.getCollection("norm-instance").find({"id":-1}).pretty()
 (defn mock-populate-norm []   
   "Mock-up of event generation to demonstrate several scenarios"
   (m/with-mongo db/mongo-conn 
   (do
-  (m/destroy! :norm-state {:id -1}) 
-  (m/insert! :norm-state {:id -1
+  (m/destroy! :norm-instance {:norm-instance-id -1}) 
+  (m/insert! :norm-instance {:norm-instance-id  -1
                           :norm "N1"
-                          :active [{:event "Received" :parameters ["Plant1" "WaterMass1"]} {:event "Statement" :parameters ["GoogleMaps" "Location" "Plant1" "=" "BunnyPraire"]} {:event "hasPower" :parameters ["GoogleMaps" "Location" "X" "=" "Y"]}  {:event "location" :parameters ["Plant1" "=" "BunnyPraire"]} {:event "CountsAs" :parameters ["BunnyPraire" "SensitiveArea"]}{:event "Entailment" :parameters ["Location" "W1" "SensitiveArea"]}] 
+                          :active [{:event "Active" :parameters []} {:event "Received" :parameters ["Plant1" "WaterMass1"]} {:event "Statement" :parameters ["GoogleMaps" "Location" "Plant1" "=" "BunnyPraire"]} {:event "hasPower" :parameters ["GoogleMaps" "Location" "X" "=" "Y"]}  {:event "location" :parameters ["Plant1" "=" "BunnyPraire"]} {:event "CountsAs" :parameters ["BunnyPraire" "SensitiveArea"]}{:event "Entailment" :parameters ["Location" "W1" "SensitiveArea"]}] 
                           :violated [{:event "Entailment" :parameters ["PerformedTreatment" "Plant1" "WaterMass1" "StringentTreatment"] :negate true}{:event "Discharged" :parameters ["Plant1" "WaterMass1"]}]
                           :fulfilled [{:event "PerformedTreatment" :parameters ["Plant1" "WaterMass1" "Treatment1"]}{:event "CountsAs" :parameters ["Treatment1" "StringentTreatment"]}{:event "Entailment" :parameters ["PerformedTreatment" "Plant1" "WaterMass1" "StringentTreatment"]}{:event "Discharged" :parameters ["Plant1" "WaterMass1"]}] 
                           :repaired [{:event "SanctionPaid" :parameters ["Plant1"]}] 
@@ -134,7 +134,7 @@
   (Thread/sleep 20000) 
   (m/with-mongo db/mongo-conn 
   (do
-    (let [records  (m/fetch :norm-state
+    (let [records  (m/fetch :norm-instance
                             :where {:id norm-id})
           _ (m/destroy! ::norm-instance-graph-node {:norm-instance-id norm-id}) 
           records (first records)
@@ -142,7 +142,6 @@
           _ (info records)
 
           active (:active records)
-          active (concat [{:event "Active" :parameters []}] active)
           _ (reset! last-node (keyword "Norm"))
           _ (reset! last-x 210)
           _ (reset! last-y 10)
@@ -220,7 +219,7 @@
           events (map #(dissoc % :_id) records)
           events (into #{} events)
          _ (info "Events retrieved:" events)
-         records  (m/fetch :norm-state
+         records  (m/fetch :norm-instance
                             :where {:id norm-id})
           norm (first records)
           norm-events (concat (:active norm) (:violated norm) (:fulfilled norm) (:repaired norm) (:compensated norm))

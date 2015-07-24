@@ -106,6 +106,11 @@
         inc_y (if (= inc_x  -800) 160 0)
         fill (decode-fill (:type par-event))
         _ (info "Drawing: " x " " y " " event " " parameters " " description " " nodeid " " ancestor)
+        actual-time (tc/to-long (time/now))
+        _ (m/with-mongo db/mongo-conn 
+          (do (m/insert! :event-graph
+                {:x x :y y :description description :nodeid nodeid :ancestor ancestor :timestamp actual-time})
+            ))
     _ (do-batik-update
       g
       (let [g (add-node! g nodeid description :x x :y y :height 100 :style {:fill fill :stroke "red"})

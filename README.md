@@ -56,6 +56,11 @@ Run the following command from console:
 ```javascript
 lein run -m edu.upc.igomez.nomodei.viz.mockups.norm
 ```
+### Mockup Population of norm instance
+Run the following command from console:
+```javascript
+lein run -m lein run -m edu.upc.igomez.nomodei.viz.normparser
+```
 
 
 ## Version history
@@ -67,3 +72,4 @@ lein run -m edu.upc.igomez.nomodei.viz.mockups.norm
 
 0.3: Mockup Visualization for norms.Event based evolution. Simple use-case. Using persistent DB to keep track of graph. First data model able to be connected with better visualization components. Using SWING
 
+0.4: Decoupling norm instance population from visualization. Improving use of constants from properties file.

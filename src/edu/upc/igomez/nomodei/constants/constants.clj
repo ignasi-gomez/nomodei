@@ -11,8 +11,10 @@
 ;                             
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;(load-file "/Users/igomez/deapt/dea-repo/nomodei/src/edu/upc/igomez/nomodei/constants/constants.clj")
+;(use 'edu.upc.igomez.nomodei.constants.constants)
 
-(ns edu.upc.igomez.nomodei.db.db
+(ns edu.upc.igomez.nomodei.constants.constants
  (:use [clojure.tools.logging :only (info error)])
   (:require [snippets-generic :as cs]
              [somnium.congomongo :as m]
@@ -38,6 +40,59 @@
     (m/make-connection mongo-uri)
     (catch Exception e
       (print mongo-uri))))
+
+(def norm-incx
+  (:norm.incx props))
+
+(def norm-incy
+  (:norm.incy props))
+
+(def query-sleep
+  (:query.sleep props))
+
+(def type-head-name
+  (:type.head.name props))
+
+(def type-head-color
+  (:type.head.color props))
+
+(def type-sub-head-color
+  (:type.subhead.color props))
+
+(def type-active-color
+  (:type.active.color props))
+
+(def type-inactive-color
+  (:type.inactive.color props))
+
+(def sub-heads
+  #{"Active" 
+  "Violated" 
+  "Fulfilled"
+  "Repaired"
+  "Compensated"})
+
+(defn select-fill-color
+  "Chooses node fill color based on the node's type and status"
+  [node-type node-status]
+  (let
+    [status-color (if node-status type-active-color type-inactive-color)
+     node-type-color (if (compare node-type type-head-name) type-head-color (if (contains? sub-heads node-type) (type-sub-head-color) status-color))
+    color node-type-color
+    ]
+    color)) 
+
+(def norm-head-x
+  (:norm.head.posx props))
+
+(def norm-head-y
+  (:norm.head.posy props))
+
+(def norm-node-height
+  (:norm.node.height props))
+
+(def norm-node-width
+  (:norm.node.width props))
 
 (def query-sleep
   (:query.sleep props))
