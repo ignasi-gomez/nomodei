@@ -12,7 +12,7 @@ Norm Monitoring on Dynamic Electronic Institutions project
 [Neo4j](http://neo4j.com/download/)
 ### Configuration
 Configure mongodb with user **nomodei** password **1981zemogi** and database **nomodei**
-For instance:
+Running the following code:
 ```javascript
 use nomodei;
 db.bunny.insert({"name":"Pelusso Maldades”});
@@ -20,6 +20,7 @@ db.addUser( { "user" : "nomodei",
                  "pwd": "1981zemogi",
                   roles: ["admin"]})
 ```
+
 Populate the collection time-line-type via by running the following code on the **nomodei** database:
  ```javascript
 db.getCollection("time-line-type").insert({"id":9999, "type":"Other"});
@@ -38,6 +39,13 @@ db.getCollection("time-line-type").insert({"id":0, "type":"Test"});
 
 db.getCollection("time-line-type”).find()
 ```
+
+Create indexes  by running the following code on the **nomodei** database:
+ ```javascript
+db.getCollection("norm-instance").createIndex( { "norm-instance-id": 1 } )
+db.getCollection("norm-instance-graph-node").createIndex( { "norm-instance-id": 1 } )
+db.getCollection("time-line-mock").createIndex( { "time": 1 } )
+```
 ## Usage
 ### Generic test
 lein clean
@@ -52,16 +60,28 @@ lein run -m edu.upc.igomez.nomodei.viz.mockups.timeline
 ```
 
 ### Mockup Visualization for norm evolution
-Run the following command from console:
+Open four terminals.
+Run the following commands from terminal1 and wait the command to finish:
 ```javascript
-lein run -m edu.upc.igomez.nomodei.viz.mockups.norm
+lein run -m edu.upc.igomez.nomodei.viz.norm.parser
 ```
-### Mockup Population of norm instance
-Run the following command from console:
+Run the following commands from terminal2 and wait until the full norm is visualized:
 ```javascript
-lein run -m lein run -m edu.upc.igomez.nomodei.viz.normparser
+lein run -m edu.upc.igomez.nomodei.viz.norm.drawer -6665
 ```
-
+Run the following commands from terminal3 and wait until text output starts to appear:
+```javascript
+lein run -m edu.upc.igomez.nomodei.viz.norm.watcher -6665
+```
+Run the following commands from terminal4 and wait until text output starts to appear:
+```javascript
+lein run -m edu.upc.igomez.nomodei.viz.norm.mock
+```
+You should see events injected on terminal4. As events are injected the visualization evolves. You can see events being captured and analysed on terminal3. Terminal2 will react to event analysis, effectively updating the visualization.
+For a slight performance improvement, if multiple tests are run in a row, clean the time-line-mock connection by running the following code on the **nomodei** database:
+```javascript
+db.getCollection("time-line-mock").remove()
+```
 
 ## Version history
 0.0: Project skeleton stub
@@ -73,3 +93,5 @@ lein run -m lein run -m edu.upc.igomez.nomodei.viz.normparser
 0.3: Mockup Visualization for norms.Event based evolution. Simple use-case. Using persistent DB to keep track of graph. First data model able to be connected with better visualization components. Using SWING
 
 0.4: Decoupling norm instance population from visualization. Improving use of constants from properties file.
+
+0.5: Decoupling visualization from mockups and control loops. Done for norm visualizations. Improving data model. Improving visualization. Improving tests.

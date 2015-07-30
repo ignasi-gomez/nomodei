@@ -6,18 +6,22 @@
 ; which accompanies this distribution, and is available at
 ; http://www.eclipse.org/legal/epl-v10.html
 ; 
+; Code to parse norm instances inserting their basic information on the
+; visualization DB. 
+; Includes code to mock-up norm parsing
+;
 ; Contributors:
-;     Ignasi Gómez-Sebastià - First Tests (2015-07-17) (yyyy-mm-dd)
+;     Ignasi Gómez-Sebastià - First Version (2015-07-17) (yyyy-mm-dd)
 ;                             
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;lein run -m edu.upc.igomez.nomodei.viz.normparser
+;lein run -m edu.upc.igomez.nomodei.viz.norm.parser
 
-;(load-file "/Users/igomez/deapt/dea-repo/nomodei/src/edu/upc/igomez/nomodei/viz/norm-parser.clj")
-;(use 'edu.upc.igomez.nomodei.viz.norm-parser)
+;(load-file "/Users/igomez/deapt/dea-repo/nomodei/src/edu/upc/igomez/nomodei/viz/norm/parser.clj")
+;(use 'edu.upc.igomez.nomodei.viz.norm.parser)
 
 
-(ns edu.upc.igomez.nomodei.viz.normparser
+(ns edu.upc.igomez.nomodei.viz.norm.parser
    (:use 
             [clojure.tools.logging :only (info error)])
   (:require 
@@ -38,12 +42,14 @@
         type db/type-head-name
         x db/norm-head-x
         y db/norm-head-y
-        description ["Norm" "Instance" norm norm-instance-id]
-        nodeid (keyword norm-instance-id)
+        height db/norm-node-height
+        width db/norm-node-width
+        description ["Norm" "Instance" (str norm " "norm-instance-id)]
+        nodeid (str "Norm" norm-instance-id)
         fill (db/select-fill-color type true)
         _ (m/with-mongo db/mongo-conn 
                   (do (m/insert! :norm-instance-graph-node
-                        {:norm-instance-id norm-instance-id :x x :y y :description description :nodeid nodeid :ancestor nil :active false :type type :fill fill :timestamp timestamp})))
+                        {:norm-instance-id norm-instance-id :x x :y y :description description :nodeid nodeid :ancestor nil :active false :type type :height height :width width :fill fill :timestamp timestamp})))
                     ]nil) nil)
 
 
@@ -67,11 +73,13 @@
         active false
         type node-event
         fill (db/select-fill-color type active)
+        height db/norm-node-height
+        width db/norm-node-width
         _ (info "draw-norm-line: " x " " y " " description " " nodeid " " ancestor)
         actual-time (tc/to-long (time/now))
         _ (m/with-mongo db/mongo-conn 
           (do (m/insert! :norm-instance-graph-node
-                {:norm-instance-id norm-id :x x :y y :description description :nodeid nodeid :ancestor ancestor :active active :timestamp actual-time})
+                {:norm-instance-id norm-id :x x :y y :description description :nodeid nodeid :ancestor ancestor :active active :timestamp actual-time :fill fill :height height :width width})
             ))
   _ (reset! last-x (+ inc_x x))
    _ (reset! last-y (+ inc_y y))
@@ -141,16 +149,17 @@
   (gen-norm-graph -6665)
   ))nil) 
 
-;lein run -m edu.upc.igomez.nomodei.viz.norm-parser
-;db.getCollection("norm-instance").find({"id":-1}).pretty()
-;db.getCollection("norm-instance-graph-node").find({"id":-1}).pretty()
-(defn mock-populate-norm
-  "Wrapper for norm parsing mockup"
+
+(defn populate-norms
+  "Parse norms and generate basic visualization graphs"
   []
   (mock-populate-norm-conca-N5))
 
+;lein run -m edu.upc.igomez.nomodei.viz.norm.parser
+;db.getCollection("norm-instance").find({"norm-instance-id":-6665}).pretty()
+;db.getCollection("norm-instance-graph-node").find({"norm-instance-id":-6665}).pretty()
 (defn -main []
-  (let [_ (mock-populate-norm)
+  (let [_ (populate-norms)
         ]
     ))
 

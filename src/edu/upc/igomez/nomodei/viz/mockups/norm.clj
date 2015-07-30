@@ -110,7 +110,7 @@
         _ (info "Drawing: " x " " y " " description " " nodeid " " ancestor)
         actual-time (tc/to-long (time/now))
         _ (m/with-mongo db/mongo-conn 
-          (do (m/insert! :norm-instance-graph-node
+          (do (m/insert! :norm-instance-graph
                 {:norm-instance-id norm-id :x x :y y :description description :nodeid nodeid :ancestor ancestor :active false :timestamp actual-time})
             ))
     _ (do-batik-update
@@ -136,7 +136,7 @@
   (do
     (let [records  (m/fetch :norm-instance
                             :where {:id norm-id})
-          _ (m/destroy! ::norm-instance-graph-node {:norm-instance-id norm-id}) 
+          _ (m/destroy! ::norm-instance-graph {:norm-instance-id norm-id}) 
           records (first records)
           norm (:norm records)
           _ (info records)
@@ -183,7 +183,7 @@
   (info "updating node :" id norm-id)
   (m/with-mongo db/mongo-conn 
   (do
-    (m/update! :norm-instance-graph-node 
+    (m/update! :norm-instance-graph
                             {:norm-instance-id norm-id
                             :nodeid id} 
                            {:$set 
@@ -309,7 +309,7 @@
   (do
     (let [my-time (deref last-time-viz)
           actual-time (tc/to-long (time/now))
-          records  (m/fetch :norm-instance-graph-node
+          records  (m/fetch :norm-instance-graph
                             :where {:timestamp {:$gt my-time}})
          _ (info "Nodes retrieved:" records)
          _ (doall (map #(update-norm-viz-node %1 norm-id) records))

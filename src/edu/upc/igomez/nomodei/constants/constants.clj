@@ -77,7 +77,7 @@
   [node-type node-status]
   (let
     [status-color (if node-status type-active-color type-inactive-color)
-     node-type-color (if (compare node-type type-head-name) type-head-color (if (contains? sub-heads node-type) (type-sub-head-color) status-color))
+     node-type-color (if (= node-type type-head-name) type-head-color (if (contains? sub-heads node-type) type-sub-head-color status-color))
     color node-type-color
     ]
     color)) 
