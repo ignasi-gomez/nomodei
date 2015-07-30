@@ -78,6 +78,7 @@ Run the following commands from terminal4 and wait until text output starts to a
 lein run -m edu.upc.igomez.nomodei.viz.norm.mock
 ```
 You should see events injected on terminal4. As events are injected the visualization evolves. You can see events being captured and analysed on terminal3. Terminal2 will react to event analysis, effectively updating the visualization.
+
 For a slight performance improvement, if multiple tests are run in a row, clean the time-line-mock connection by running the following code on the **nomodei** database:
 ```javascript
 db.getCollection("time-line-mock").remove()
