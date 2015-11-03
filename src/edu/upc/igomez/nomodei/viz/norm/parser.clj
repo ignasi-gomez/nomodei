@@ -132,6 +132,57 @@
          ]nil))) 
   nil)
 
+(defn mock-populate-norm-conca-N1 []   
+  "Mock-up of norm parsing to demonstrate several scenarios"
+  (info "mock-populate-norm-conca-N1")
+  (m/with-mongo db/mongo-conn 
+  (do
+  (m/destroy! :norm-instance {:norm-instance-id -6661}) 
+  (m/insert! :norm-instance {:norm-instance-id  -6661
+                          :norm "Basin-N1"
+                          :active [{:event "Active" :parameters []} {:event "Received" :parameters ["Plant1" "WaterMass1"]}] 
+                          :violated [{:event "Violated" :parameters []} {:event "Entailment" :parameters ["PerformedTreatment" "Plant1" "WaterMass1" "SecondaryTreatment"] :negate true}{:event "Discharged" :parameters ["Plant1" "WaterMass1"]}]
+                          :fulfilled [{:event "Fulfilled" :parameters []} {:event "PerformedTreatment" :parameters ["Plant1" "WaterMass1" "Treatment1"]}{:event "CountsAs" :parameters ["Treatment1" "SecondaryTreatment"]}{:event "Entailment" :parameters ["PerformedTreatment" "Plant1" "WaterMass1" "SecondaryTreatment"]}{:event "Discharged" :parameters ["Plant1" "WaterMass1"]}] 
+                          :repaired [{:event "Repaired" :parameters []} {:event "SanctionPaid" :parameters ["Plant1"]}] 
+                          :compensated [{:event "Compensated" :parameters []} {:event "Annulment" :parameters ["N1"]}{:event "SanctionCompensated" :parameters ["Plant1"]}] 
+                          })
+  (gen-norm-graph -6661)
+  ))nil) 
+
+(defn mock-populate-norm-conca-N2 []   
+  "Mock-up of norm parsing to demonstrate several scenarios"
+  (info "mock-populate-norm-conca-N2")
+  (m/with-mongo db/mongo-conn 
+  (do
+  (m/destroy! :norm-instance {:norm-instance-id -6662}) 
+  (m/insert! :norm-instance {:norm-instance-id  -6662
+                          :norm "Basin-N2"
+                          :active [{:event "Active" :parameters []} {:event "isDay" :parameters ["1"]} {:event "isMonth" :parameters ["1"]}] 
+                          :violated [{:event "Violated" :parameters []} {:event "isDay" :parameters ["31"]} {:event "isMonth" :parameters ["12"]} {:event "sampleProvided" :parameters ["Plant1" "24"] :negate true}]
+                          :fulfilled [{:event "Fulfilled" :parameters []} {:event "sampleProvided " :parameters ["Plant1" "24"]}] 
+                          :repaired [{:event "Repaired" :parameters []} {:event "visited" :parameters ["Plant1" "Inspector1"]} {:event "sampleTaken" :parameters ["Inspector1" "Sample1"]}] 
+                          :compensated [{:event "Compensated" :parameters []} {:event "Annulment" :parameters ["N2"]}{:event "SanctionCompensated" :parameters ["Plant1"]}] 
+                          })
+  (gen-norm-graph -6662)
+  ))nil) 
+
+(defn mock-populate-norm-conca-N4 []   
+  "Mock-up of norm parsing to demonstrate several scenarios"
+  (info "mock-populate-norm-conca-N4")
+  (m/with-mongo db/mongo-conn 
+  (do
+  (m/destroy! :norm-instance {:norm-instance-id -6664}) 
+  (m/insert! :norm-instance {:norm-instance-id  -6664
+                          :norm "Basin-N4"
+                          :active [{:event "Active" :parameters []} {:event "SignedContract" :parameters ["Plant1" "Industry1"]}] 
+                          :violated [{:event "Violated" :parameters []} {:event "discharged" :parameters ["Industry1" "WaterMass1" "Plant1"]} {:event "concentrationHigh" :parameters ["WaterMass1" "Pollutant1"]} {:event "InformDischarge" :parameters ["Industry1" "WaterMass1" "Plant1"] :negate true}]
+                          :fulfilled [{:event "Fulfilled" :parameters []} {:event "discharged" :parameters ["Industry1" "WaterMass1" "Plant1"]} {:event "concentrationMet" :parameters ["WaterMass1" "Pollutant1"]} {:event "InformDischarge " :parameters ["Industry1" "WaterMass1" "Plant1"]}]
+                          :repaired [{:event "Repaired" :parameters []} {:event "SanctionPaid" :parameters ["Plant1"]}] 
+                          :compensated [{:event "Compensated" :parameters []} {:event "Annulment" :parameters ["N4"]}{:event "SanctionCompensated" :parameters ["Plant1"]}] 
+                          })
+  (gen-norm-graph -6664)
+  ))nil) 
+
 (defn mock-populate-norm-conca-N5 []   
   "Mock-up of norm parsing to demonstrate several scenarios"
   (info "mock-populate-norm-conca-N5")
@@ -139,21 +190,79 @@
   (do
   (m/destroy! :norm-instance {:norm-instance-id -6665}) 
   (m/insert! :norm-instance {:norm-instance-id  -6665
-                          :norm "N5"
+                          :norm "Basin-N5"
                           :active [{:event "Active" :parameters []} {:event "Received" :parameters ["Plant1" "WaterMass1"]} {:event "Statement" :parameters ["GoogleMaps" "Location" "Plant1" "=" "BunnyPraire"]} {:event "hasPower" :parameters ["GoogleMaps" "Location" "X" "=" "Y"]}  {:event "location" :parameters ["Plant1" "=" "BunnyPraire"]} {:event "CountsAs" :parameters ["BunnyPraire" "SensitiveArea"]}{:event "Entailment" :parameters ["Location" "W1" "SensitiveArea"]}] 
                           :violated [{:event "Violated" :parameters []} {:event "Entailment" :parameters ["PerformedTreatment" "Plant1" "WaterMass1" "StringentTreatment"] :negate true}{:event "Discharged" :parameters ["Plant1" "WaterMass1"]}]
                           :fulfilled [{:event "Fulfilled" :parameters []} {:event "PerformedTreatment" :parameters ["Plant1" "WaterMass1" "Treatment1"]}{:event "CountsAs" :parameters ["Treatment1" "StringentTreatment"]}{:event "Entailment" :parameters ["PerformedTreatment" "Plant1" "WaterMass1" "StringentTreatment"]}{:event "Discharged" :parameters ["Plant1" "WaterMass1"]}] 
                           :repaired [{:event "Repaired" :parameters []} {:event "SanctionPaid" :parameters ["Plant1"]}] 
-                          :compensated [{:event "Compensated" :parameters []} {:event "Annulment" :parameters ["N1"]}{:event "SanctionCompensated" :parameters ["Plant1"]}] 
+                          :compensated [{:event "Compensated" :parameters []} {:event "SanctionCompensated" :parameters ["Plant1"]}] 
                           })
   (gen-norm-graph -6665)
+  ))nil) 
+
+(defn mock-populate-norm-avicena-N1 []   
+  "Mock-up of norm parsing to demonstrate several scenarios"
+  (info "mock-populate-norm-avicena-N1")
+  (m/with-mongo db/mongo-conn 
+  (do
+  (m/destroy! :norm-instance {:norm-instance-id -7771}) 
+  (m/insert! :norm-instance {:norm-instance-id  -7771
+                          :norm "Avicena-N1"
+                          :active [{:event "Active" :parameters []} {:event "hasPrescription" :parameters ["Prescription1" "Patient1"]} {:event "isForMedication" :parameters ["Prescription1" "Medication1"]}] 
+                          :violated [{:event "Violated" :parameters []} {:event "hasDelivered" :parameters ["Pharmacist1" "Medication1" "Patient1"]} {:event "hasPrescription" :parameters ["Prescription1" "Patient1"]} {:event "identified" :parameters ["Pharmacist1" "Patient1"] :negate true}]
+                          :fulfilled [{:event "Fulfilled" :parameters []} {:event "hasDelivered" :parameters ["Pharmacist1" "Medication1" "Patient1"]} {:event "hasPrescription" :parameters ["Prescription1" "Pharmacist1"]} {:event "identified " :parameters ["Pharmacist1" "Patient1"]}]
+                          :repaired [{:event "Repaired" :parameters []} {:event "WarningSent" :parameters ["Competent Authority" "Pharmacist1"]}] 
+                          :compensated [{:event "Compensated" :parameters []} {:event "SanctionCompensated" :parameters ["Pharmacist1"]}] 
+                          })
+  (gen-norm-graph -7771)
+  ))nil) 
+
+(defn mock-populate-norm-avicena-N5 []   
+  "Mock-up of norm parsing to demonstrate several scenarios"
+  (info "mock-populate-norm-avicena-N5")
+  (m/with-mongo db/mongo-conn 
+  (do
+  (m/destroy! :norm-instance {:norm-instance-id -7775}) 
+  (m/insert! :norm-instance {:norm-instance-id  -7775
+                          :norm "Avicena-N5"
+                          :active [{:event "Active" :parameters []} {:event "actualTime" :parameters ["initTime"]}] 
+                          :violated [{:event "Violated" :parameters []} {:event "actualTimeLt" :parameters ["finishTime"]} {:event "exercise" :parameters ["Patient1"]}] 
+                          :fulfilled [{:event "Fulfilled" :parameters []} {:event "actualTimeGt" :parameters ["finishTime"]} {:event "exercise " :parameters ["Patient1"] :negate true}]
+                          :repaired [{:event "Repaired" :parameters []} {:event "increaseReputation" :parameters ["Patient1"]}] 
+                          :compensated [{:event "Compensated" :parameters []} {:event "SanctionCompensated" :parameters ["Patient1"]}] 
+                          })
+  (gen-norm-graph -7775)
+  ))nil) 
+
+(defn mock-populate-norm-avicena-N6 []   
+  "Mock-up of norm parsing to demonstrate several scenarios"
+  (info "mock-populate-norm-avicena-N6")
+  (m/with-mongo db/mongo-conn 
+  (do
+  (m/destroy! :norm-instance {:norm-instance-id -7776}) 
+  (m/insert! :norm-instance {:norm-instance-id  -7776
+                          :norm "Avicena-N6"
+                          :active [{:event "Active" :parameters []} {:event "isPatient" :parameters ["Patient1"]}] 
+                          :violated [{:event "Violated" :parameters []} {:event "consume" :parameters ["Patient1" "ECigarrete1"]} {:event "CountsAs" :parameters ["ECigarrete1" "ToxicSubstance"]}{:event "Entailment" :parameters ["consume" "Patient1" "ToxicSubstance"]}] 
+                          :fulfilled [{:event "Fulfilled" :parameters []} {:event "False" :parameters [""]}]
+                          :repaired [{:event "Repaired" :parameters []} {:event "logInRecord" :parameters ["Consume" "Patient1" "ECigarrete1" "Time1"]}] 
+                          :compensated [{:event "Compensated" :parameters []} {:event "SanctionCompensated" :parameters ["Patient1"]}] 
+                          })
+  (gen-norm-graph -7776)
   ))nil) 
 
 
 (defn populate-norms
   "Parse norms and generate basic visualization graphs"
   []
-  (mock-populate-norm-conca-N5))
+  (mock-populate-norm-conca-N1)
+  (mock-populate-norm-conca-N2)
+  (mock-populate-norm-conca-N4)
+  (mock-populate-norm-conca-N5)
+  (mock-populate-norm-avicena-N1)
+  (mock-populate-norm-avicena-N5)
+  (mock-populate-norm-avicena-N6)
+  )
 
 ;lein run -m edu.upc.igomez.nomodei.viz.norm.parser
 ;db.getCollection("norm-instance").find({"norm-instance-id":-6665}).pretty()

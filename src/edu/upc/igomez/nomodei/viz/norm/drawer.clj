@@ -91,8 +91,9 @@
       _ (do-batik-update
         g
         (let [g (add-node! g nodeid description :x x :y y :height height :width width :style {:fill fill :stroke "red"})
-              g (add-edge! g (keyword (gensym "edge")) ancestor nodeid)
-              g (set-node-selected! g nodeid true)]
+              ;g (add-edge! g (keyword (gensym "edge")) ancestor nodeid)
+              ;g (set-node-selected! g nodeid true)
+              ]
           (reset! *graph* g)))
     ]
     nil)))
@@ -107,6 +108,7 @@
         (let [records  (m/fetch :norm-instance-graph-node
                                   :where {:norm-instance-id norm-id }
                                   :sort {:timestamp 1})
+              _ (info "Maldades" records)
               _ (doall (map #(draw-norm-line %) records))
         ]
         nil)))
@@ -141,7 +143,7 @@
     (let [my-time (deref last-time-viz)
           actual-time (tc/to-long (time/now))
           records  (m/fetch :norm-instance-graph-node
-                            :where {:timestamp {:$gt my-time}})
+                            :where {:timestamp {:$gt my-time} :norm-instance-id norm-id})
          _ (info "Nodes retrieved:" records)
          _ (doall (map #(update-norm-viz-node %1) records))
          _ (reset! last-time-viz actual-time)
@@ -165,6 +167,7 @@
         _ (SwingUtilities/invokeAndWait
           (fn [] (.setVisible frame true)))
         _ (Thread/sleep 20000) 
+        _ (info "Pelusso " norm-id)
         _ (draw-norm norm-id)
         _ (Thread/sleep 10000) 
         fut (future (update-norm-viz norm-id))

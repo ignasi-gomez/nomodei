@@ -6,18 +6,21 @@
 ; which accompanies this distribution, and is available at
 ; http://www.eclipse.org/legal/epl-v10.html
 ; 
+; Code to draw norm instance states based on the events recieved on the
+; visualization DB. 
+;
 ; Contributors:
-;     Ignasi Gómez-Sebastià - First Tests (2015-07-17) (yyyy-mm-dd)
+;     Ignasi Gómez-Sebastià - First Version (2015-07-30) (yyyy-mm-dd)
 ;                             
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;lein run -m edu.upc.igomez.nomodei.viz.mockups.timeline
+;lein run -m edu.upc.igomez.nomodei.viz.time.drawer
 
-;(load-file "/Users/igomez/deapt/dea-repo/nomodei/src/edu/upc/igomez/nomodei/viz/mockups/timeline.clj")
-;(use 'edu.upc.igomez.nomodei.viz.mockups.timeline)
+;(load-file "/Users/igomez/deapt/dea-repo/nomodei/src/edu/upc/igomez/nomodei/viz/time/drawer.clj")
+;(use 'edu.upc.igomez.nomodei.viz.time.drawer)
+;lein run -m edu.upc.igomez.nomodei.viz.time.drawer
 
-
-(ns edu.upc.igomez.nomodei.viz.mockups.timeline
+(ns edu.upc.igomez.nomodei.viz.time.drawer
    (:use compojure.core
         [clojure.tools.logging :only (info error)]
         lacij.edit.graph
@@ -66,7 +69,7 @@
 (def ^{:dynamic true} pane (atom ""))
 
 (def last-x (atom 210))
-(def last-time (atom 0))
+(def last-time (atom (tc/to-long (time/now))))
 (def last-y (atom 10))
 (def last-node (atom (keyword "Monitor-Start")))
 
@@ -125,50 +128,6 @@
   (Thread/sleep db/draw-sleep) 
   nil)
 
-(defn mock-populate-obligation-propective []   
-  "Mock-up of event generation to demonstrate several scenarios"
-  (m/with-mongo db/mongo-conn 
-  (do
-  (m/drop-coll! :time-line-mock)  
-  (Thread/sleep db/mock-generate-sleep) 
-
-  (m/insert! :time-line-mock {:event "Received" :parameters ["Plant1" "WaterMass1"] :description ["Received" "(" "Plant1" "WaterMass1" ")"] :time (tc/to-long (time/now)) :type 5999})
-  (info "Mock Insert" @last-time)
-  (Thread/sleep db/mock-generate-sleep) 
-
-  (m/insert! :time-line-mock {:event "Discharged" :parameters ["Plant1" "WaterMass1"] :description ["Discharged" "(" "Plant1" "WaterMass1" ")"] :time (tc/to-long (time/now)) :type 5999})  
-  (info "Mock Insert" @last-time)
-  (Thread/sleep db/mock-generate-sleep) 
-
-  (m/insert! :time-line-mock {:event "Received" :parameters ["Plant1" "WaterMass2"] :description ["Received" "(" "Plant1" "WaterMass2" ")"] :time (tc/to-long (time/now)) :type 5999})  
-  (info "Mock Insert" @last-time)
-  (Thread/sleep db/mock-generate-sleep) 
-  
-  (m/insert! :time-line-mock {:event "Discharged" :parameters ["Plant1" "WaterMass2"] :description ["Discharged" "(" "Plant1" "WaterMass2" ")"] :time (tc/to-long (time/now)) :type 5999})  
-  (info "Mock Insert" @last-time)
-  (Thread/sleep db/mock-generate-sleep) 
-
-  (m/insert! :time-line-mock {:event "Prospective Promulgation" :parameters ["N1"] :description ["Prospective" "Promulgation" "N1"] :time (tc/to-long (time/now)) :type 6900})  
-  (info "Mock Insert" @last-time)
-  (Thread/sleep db/mock-generate-sleep) 
-
-  (m/insert! :time-line-mock {:event "Received" :parameters ["Plant1" "WaterMass2"] :description ["Received" "(" "Plant1" "WaterMass3" ")"] :time (tc/to-long (time/now)) :type 5999})
-  (info "Mock Insert" @last-time)
-  (Thread/sleep db/mock-generate-sleep) 
-  
-  (m/insert! :time-line-mock {:event "Discharged" :parameters ["Plant1" "WaterMass3"] :description ["Discharged" "(" "Plant1" "WaterMass3" ")"] :time (tc/to-long (time/now)) :type 5999})  
-  (info "Mock Insert" @last-time)
-  (Thread/sleep db/mock-generate-sleep) 
-
-  (m/insert! :time-line-mock {:event "Norm Violation" :parameters ["N1"] :description ["Norm" "Violation" "N1"] :time (tc/to-long (time/now)) :type 8999})  
-  (info "Mock Insert" @last-time)
-  (Thread/sleep db/mock-generate-sleep) 
-
-  (m/insert! :time-line-mock {:event "Sanction" :parameters ["Plant1"] :description ["Sanction" "Plant1"] :time (tc/to-long (time/now)) :type 5999})  
-  (info "Mock Insert" @last-time)
-  (Thread/sleep db/mock-generate-sleep) 
-  ))nil) 
-
 (defn query-graph-time-line
   []
   "Query mongoDB looking for events inserted after last query. Orders events by time and type. 
@@ -178,7 +137,7 @@
     (let [my-time (deref last-time)
           actual-time (tc/to-long (time/now))
           records  (m/fetch :time-line-mock
-                            :where {:time {:$gt my-time}})
+                            :where {:time {:$gt my-time} :line true})
           records (sort-by (juxt :time :type) records)
          _ (info "Events retrieved:" records)
          _ (doall (map #(draw-time-line %) records))
@@ -200,8 +159,8 @@
         frame (create-frame jsvgscrollpane)
         g (build g)
         _ (reset! *graph* g)
+        _ (info "Graph ready")
         _ (Thread/sleep 10000) 
-        fut (future (mock-populate-obligation-propective))
         fut (future (query-graph-time-line))
         ]
     (SwingUtilities/invokeAndWait

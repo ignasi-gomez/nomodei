@@ -90,13 +90,14 @@
     (let [my-time (deref last-time)
           actual-time (tc/to-long (time/now))
           records  (m/fetch :time-line-mock
-                            :where {:time {:$gt my-time}}
+                            :where {:time {:$gt my-time} :norm true}
                             :only [:event :parameters])
           events (map #(dissoc % :_id) records)
           events (into #{} events)
          _ (info "Events retrieved:" events)
          records  (m/fetch :norm-instance
                             :where {:norm-instance-id norm-id})
+         _ (info "pelusso" records)
           norm (first records)
           norm-events (concat (:active norm) (:violated norm) (:fulfilled norm) (:repaired norm) (:compensated norm))
           norm-events (into #{} norm-events)
