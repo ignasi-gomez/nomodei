@@ -94,7 +94,11 @@ db.parseLocation.find("").pretty();
 db.parseLink.find("").pretty();
 
 ```
-
+Import a more complex scene by running:
+```
+ cd sotrasim
+ python sceneParser.py Test.opera
+```
 ##TBD
 - Improve Visualization refresh method
 - Include list of scenes to visualize and choose one
