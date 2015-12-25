@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!--meta http-equiv="refresh" content="5"-->
+<style>
+
+.node {
+  fill: #ccc;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+.body{
+  text-align:center;
+}
+
+.super{
+  display:table;         
+  width:auto;         
+  background-color:#04B4AE;         
+  border:1px solid  #666666;         
+  border-spacing:5px;
+}
+
+.heading{
+  display:table;         
+  width:auto;         
+  background-color:#eee;         
+  border:1px solid  #666666;         
+  border-spacing:5px;
+}
+.value{
+  display:table;         
+  width:auto;         
+  background-color:#eee;         
+  border:1px solid  #666666;         
+  border-spacing:5px;
+}
+
+</style>
+
+
+ <div id="toolTip"  style="opacity:0; position: absolute">
+        <div style="position:absolute;" >
+            <div id="currentAgentsTip" class="super" style="width:135px; left:0px; top:10px; position: absolute;">
+                <div class="heading"><center><b>Agents currently in the scene</b></center></div>                
+                <div id="currentAgents" class="value"></div>
+            </div>
+            <div id="historyAgentsTip" class="super" style="width:125px; left:140px; top:10px; position: absolute;">
+                <div class="heading"><center><b>Agents historically in the scene</b></center></div>                
+                <div id="historyAgents" class="value"></div>
+            </div>
+            <div id="activeNormsTip" class="super" style="width:125px; left:272px; top:10px; position: absolute;">
+                <div class="heading"><center><b>Active norms in the scene</b></center></div>                
+                <div id="activeNorms" class="value"></div>
+            </div>
+            <div id="violatedNormsTip" class="super" style="width:125px; left:404px; top:10px; position: absolute;">
+                <div class="heading"><center><b>Violated norms in the scene</b></center></div>                
+                <div id="violatedNorms" class="value"></div>
+            </div>
+        </div>
+ </div>
+
+
+<head>
+<title>Scene visualization</title>
+</head>
+
+<center>
+<form action="http://localhost:8000/sceneViz/">
+    <input type="submit" value="Refresh">
+</form>
+</center>
+
+<body>
+	<center><H1> NoMoDEI Scene visualization </H1></center>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+//Variables of the javaScript code
+
+//This is the JSON with the visualization information provided by view.py
+var graph = {{data|safe}};
+
+var width = graph.canvasWidth,
+    height = graph.canvasHeight;
+
+
+//See https://github.com/mbostock/d3/wiki/Ordinal-Scales
+var color = d3.scale.category10();
+
+var force = d3.layout.force()
+    .charge(graph.forceCharge)
+    .linkDistance(graph.linkDistance)
+    .size([width, height]);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var toolTip = d3.select(document.getElementById("toolTip"));
+var header = d3.select(document.getElementById("head"));
+var header1 = d3.select(document.getElementById("header1"));
+var header2 = d3.select(document.getElementById("header2"));
+var currentAgents = d3.select(document.getElementById("currentAgents"));
+var historyAgents = d3.select(document.getElementById("historyAgents"));
+var activeNorms = d3.select(document.getElementById("activeNorms"));
+var violatedNorms = d3.select(document.getElementById("violatedNorms"));
+
+//Draws a graph
+var drawGraph = function(graph) {
+  force
+      .nodes(graph.nodes)
+      .links(graph.links)
+      .start();
+
+
+
+  svg.append("defs").append("marker")
+    .attr("id", "blockedHead")
+    .attr("refX", 7 ) 
+    .attr("refY", 1)
+    .attr("markerWidth", 2)
+    .attr("markerHeight", 2)
+    .attr("orient", "auto")
+    .attr('fill', graph.blockedPathColor)
+    .append("path")
+        .attr("d", graph.blockedPathShape); 
+
+   svg.append("defs").append("marker")
+    .attr("id", "activeHead")
+    .attr("refX", 6.1 ) 
+    .attr("refY", 1)
+    .attr("markerWidth", 2)
+    .attr("markerHeight", 2)
+    .attr("orient", "auto")
+    .attr('fill', graph.activePathColor)
+    .append("path")
+        .attr("d", graph.activePathShape); 
+
+  var link = svg.selectAll(".link")
+      .data(graph.links)
+    .enter().append("line")
+      .attr("class", "link")
+      .attr("marker-end", function(d) { return selectHead(d.transitions); })      
+      .style("stroke-width", function(d) { return Math.sqrt(graph.linkSize); });
+
+      link.append("title").text(function (d) {return d.transitions;})
+
+  var gnodes = svg.selectAll('g.gnode')
+     .data(graph.nodes)
+     .enter()
+     .append('g')
+     .classed('gnode', true);
+
+  var node = gnodes.append("circle")
+      .attr("class", "node")
+      .attr("r", graph.nodeRadius)
+      .style("fill", function(d) { return selectNodeColor(d.runningAgentsCurrent, d.runningAgentsHistory) })
+      .on("mouseover", function (d) {
+                node_onMouseOver(d);
+            })
+      .on("mouseout", function (d) { node_onMouseOut(d)})
+      .call(force.drag);
+
+
+  var labels = gnodes.append("text")
+  	  .attr("dx", function(d){return -(graph.nodeRadius/2)})
+  	  .style("font-weight", function(d){return "bold"})
+      .text(function(d) { return d.name; });  
+    
+  force.on("tick", function() {
+    link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    gnodes.attr("transform", function(d) { 
+        return 'translate(' + [d.x, d.y] + ')';     
+    });
+  
+  });
+};
+
+//Selects a link head based on the number of transitions in the link
+function selectHead(transitions) {   
+	if (transitions > 0) {
+    	return "url(#activeHead)";} 
+    else {
+    	return "url(#blockedHead)";}
+}
+
+//Selects a node color based on the number of agents in the link
+function selectNodeColor(runningAgentsCurrent, runningAgentsHistory) {   
+	if (runningAgentsCurrent > 0) {
+    	return graph.ActiveScene;} 
+    else {
+    	 if (runningAgentsHistory > 0) {
+	    	return graph.InactiveScene;} 
+    		else {
+    		return graph.BlockedScene;}}
+}
+
+//Shows a tooltip with extra information when mouse is over a node
+function node_onMouseOver(d) {            
+			console.log("node_onMouseOver");				
+			console.log(d3.event.pageX + "|" + d3.event.pageY);	
+            toolTip.transition()
+                .duration(200)
+                .style("opacity",.9);           
+            currentAgents.text(d.runningAgentsCurrent);
+            historyAgents.text(d.runningAgentsHistory);
+            activeNorms.text(d.normsActive);
+            violatedNorms.text(d.normsViolated);
+	            
+
+             toolTip.style("left", (d3.event.pageX + 15) + "px")
+                .style("top", (d3.event.pageY - 75) + "px");
+}
+//Hides a tooltip with extra information when mouse is not over a node anymore
+ function node_onMouseOut(d) {
+ 			console.log("node_onMouseOut");
+            return toolTip.transition()
+                .duration(500)
+                .style("opacity", "0");
+    }
+
+
+//Start drawing the graph, position nodes and stop force computation (nodes are fixed)
+drawGraph(graph);
+force.start();
+for (var i = graph.buildLoops; i*10000000000 > 0; --i) force.tick();
+force.stop();
+
+
+
+
+
+</script>
+
+<center>
+	<H5> ©Ignasi Gómez-Sebastià 
+		<a href="https://kemlg.upc.edu/?set_language=en" target="_blank">KEMLG</a> 
+		igomez@cs.upc.edu 
+	</H5>
+</center>

@@ -1,0 +1,28 @@
+Lista de escenas:
+<scenes xmi:type="net.sf.ictalive.operetta:Scene" xmi:id="_fu_f4HWEEeSewttO5pb3IA" sceneID="VerifyDischarge">
+
+	· type="start"
+	· missing type
+	· type="end"
+	· xmi:id=
+	· sceneID=
+
+Lista de arcos:
+<arcs xmi:type="net.sf.ictalive.operetta:SceneToTransitionArc" xmi:id="_DfA6cHb1EeSUEctSIU7ZLQ" arcID="A446" from="_fu_f4HWEEeSewttO5pb3IA" to="_Csf4YHb1EeSUEctSIU7ZLQ"/>
+
+	· xmi:type="net.sf.ictalive.operetta:SceneToTransitionArc"
+	· from= EscenaOrigen.xmi:id
+	· to= EscenaDestino.xmi:id
+
+Saltos en arcos
+<transitions xmi:type="net.sf.ictalive.operetta:Transition" xmi:id="_8E55wHZ6EeSeY78-z2Rfcg" transitionID="T65" transitionType="XOR"/>
+
+Posición de los nodos:
+<children xmi:type="notation:Shape" xmi:id="_fvAG8HWEEeSewttO5pb3IA" type="2101" element="_fu_f4HWEEeSewttO5pb3IA" fontName="Lucida Grande" fontHeight="20"><children xmi:type="notation:DecorationNode" xmi:id="_fvAG8nWEEeSewttO5pb3IA" type="5101"/><children xmi:type="notation:BasicCompartment" xmi:id="_fvAG83WEEeSewttO5pb3IA" type="7101" collapsed="true"><styles xmi:type="notation:SortingStyle" xmi:id="_fvAG9HWEEeSewttO5pb3IA"/><styles xmi:type="notation:FilteringStyle" xmi:id="_fvAG9XWEEeSewttO5pb3IA"/></children><layoutConstraint xmi:type="notation:Bounds" xmi:id="_fvAG8XWEEeSewttO5pb3IA" x="192" y="252"/></children>
+
+	·  element= Scene.xmi:id
+	· xmi:type= "notation:Shape"
+	· <layoutConstraint xmi:type="notation:Bounds"
+	· x="192" y="252"
+
+
