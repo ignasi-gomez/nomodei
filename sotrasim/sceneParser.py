@@ -26,7 +26,7 @@ def main():
             sys.exit(0)
     # process arguments
     for arg in args:
-        parse(arg) # process() is defined elsewhere
+        parse(arg)
 
 def parse(file):
     print ("Parsing the ALIVE model in file '" + file + "'")

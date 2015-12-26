@@ -99,10 +99,15 @@ Import a more complex scene by running:
  cd sotrasim
  python sceneParser.py Test.opera
 ```
+Simulate activity in the complex scene by running:
+```
+ cd sotrasim
+ python sotrasim.py
+```
+
 ##TBD
 - Improve Visualization refresh method
 - Include list of scenes to visualize and choose one
-- Populate 'sceneSimData' with data from simulator
 - Discuss how to represent norms inside scenes
 
 # nomodei project
