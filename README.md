@@ -136,7 +136,7 @@ Configure mongodb with user **nomodei** password **1981zemogi** and database **n
 Running the following code:
 ```javascript
 use nomodei;
-db.bunny.insert({"name":"Pelusso Maldades”});
+db.bunny.insert({"name":"Pelusso Maldades"});
 db.addUser( { "user" : "nomodei",
                  "pwd": "1981zemogi",
                   roles: ["admin"]})
@@ -154,11 +154,11 @@ db.getCollection("time-line-type").insert({"id":6800, "type":"Retroactive Promul
 db.getCollection("time-line-type").insert({"id":6700, "type":"Abrogation"});
 db.getCollection("time-line-type").insert({"id":6600, "type":"Annulment"});
 
-db.getCollection("time-line-type").insert({"id”:5999, "type":"Event”});
+db.getCollection("time-line-type").insert({"id":5999, "type":"Event"});
 
 db.getCollection("time-line-type").insert({"id":0, "type":"Test"});
 
-db.getCollection("time-line-type”).find()
+db.getCollection("time-line-type").find()
 ```
 
 Create indexes  by running the following code on the **nomodei** database:
