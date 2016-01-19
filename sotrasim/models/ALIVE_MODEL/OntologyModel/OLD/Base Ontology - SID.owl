@@ -1,0 +1,1634 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY riverbasin "http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/igomez/ontologies/2013/11/untitled-ontology-6#"
+     xml:base="http://www.semanticweb.org/igomez/ontologies/2013/11/untitled-ontology-6"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:riverbasin="http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin">
+        <rdfs:comment></rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#hasComponent -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;hasComponent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#hasComposition -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;hasComposition">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:range rdf:resource="&riverbasin;Pollutant"/>
+        <rdfs:domain rdf:resource="&riverbasin;WaterComposition"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#hasConcentration -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;hasConcentration">
+        <rdfs:range rdf:resource="&riverbasin;Pollutant"/>
+        <rdfs:domain rdf:resource="&riverbasin;WaterComposition"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#hasConnection -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;hasConnection"/>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#hasConnectionBeginningOf -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;hasConnectionBeginningOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&riverbasin;Conveyor"/>
+        <rdfs:range rdf:resource="&riverbasin;RiverSection"/>
+        <rdfs:range rdf:resource="&riverbasin;WWTP"/>
+        <rdfs:range rdf:resource="&riverbasin;WaterProducer"/>
+        <rdfs:range rdf:resource="&riverbasin;WaterRetainingTank"/>
+        <rdfs:subPropertyOf rdf:resource="&riverbasin;hasConnection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#hasConnectionEndingOf -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;hasConnectionEndingOf">
+        <rdfs:domain rdf:resource="&riverbasin;Conveyor"/>
+        <rdfs:range rdf:resource="&riverbasin;RiverSection"/>
+        <rdfs:range rdf:resource="&riverbasin;WWTP"/>
+        <rdfs:range rdf:resource="&riverbasin;WWTank"/>
+        <rdfs:range rdf:resource="&riverbasin;WaterRetainingTank"/>
+        <rdfs:subPropertyOf rdf:resource="&riverbasin;hasConnection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#hasCostValue -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;hasCostValue"/>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#hasFlow -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;hasFlow">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <owl:propertyDisjointWith rdf:resource="&riverbasin;hasVolume"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;hasLocation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&riverbasin;Location"/>
+        <rdfs:domain rdf:resource="&riverbasin;WWTP"/>
+        <rdfs:domain rdf:resource="&riverbasin;WaterProducer"/>
+        <rdfs:domain rdf:resource="&riverbasin;WaterRetainingTank"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#hasProducingFeature -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;hasProducingFeature">
+        <rdfs:range rdf:resource="&riverbasin;Flow_water_mass"/>
+        <rdfs:range rdf:resource="&riverbasin;WWComposition"/>
+        <rdfs:domain rdf:resource="&riverbasin;WaterProducer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#hasStormWaterArea -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;hasStormWaterArea">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&riverbasin;LandUse"/>
+        <rdfs:domain rdf:resource="&riverbasin;StormWater"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#hasTreatingWWFeature -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;hasTreatingWWFeature">
+        <rdfs:range rdf:resource="&riverbasin;WWProducer"/>
+        <rdfs:domain rdf:resource="&riverbasin;WWTreatment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#hasVolume -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;hasVolume">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#isA -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;isA"/>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#isComponentOf -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;isComponentOf">
+        <rdfs:domain rdf:resource="&riverbasin;Pollutant"/>
+        <rdfs:range rdf:resource="&riverbasin;WaterComposition"/>
+        <owl:inverseOf rdf:resource="&riverbasin;hasComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#isConnectedTo -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;isConnectedTo"/>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#isLocationOf -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;isLocationOf">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="&riverbasin;Location"/>
+        <rdfs:range rdf:resource="&riverbasin;WWTP"/>
+        <rdfs:range rdf:resource="&riverbasin;WaterProducer"/>
+        <rdfs:range rdf:resource="&riverbasin;WaterRetainingTank"/>
+        <owl:inverseOf rdf:resource="&riverbasin;hasLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#isPartOfConveyor -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;isPartOfConveyor">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&riverbasin;Conveyor"/>
+        <rdfs:domain rdf:resource="&riverbasin;ConveyorUnit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#isPartOfWWTP -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;isPartOfWWTP">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&riverbasin;WWTP"/>
+        <rdfs:domain rdf:resource="&riverbasin;WWTreatmentUnit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#isTransportingWWOf -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;isTransportingWWOf">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="&riverbasin;Conveyor"/>
+        <rdfs:range rdf:resource="&riverbasin;WWTP"/>
+        <rdfs:range rdf:resource="&riverbasin;WaterProducer"/>
+        <rdfs:range rdf:resource="&riverbasin;WaterRetainingTank"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#isTreatingWWFeatureOf -->
+
+    <owl:ObjectProperty rdf:about="&riverbasin;isTreatingWWFeatureOf">
+        <owl:inverseOf rdf:resource="&riverbasin;hasTreatingWWFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WastewaterProductionFeatureValue -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;WastewaterProductionFeatureValue">
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WastewaterTreatmentFeatureValue -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;WastewaterTreatmentFeatureValue">
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#XCoordinate -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;XCoordinate">
+        <rdfs:domain rdf:resource="&riverbasin;Location"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#YCoordinate -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;YCoordinate">
+        <rdfs:domain rdf:resource="&riverbasin;Location"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#biologicalOxygenDemandConcentration -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;biologicalOxygenDemandConcentration">
+        <rdfs:domain rdf:resource="&riverbasin;BiologicalOxygenDemand"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#chemicalOxygenDemandConcentration -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;chemicalOxygenDemandConcentration">
+        <rdfs:domain rdf:resource="&riverbasin;ChemicalOxygenDemand"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#emergingPollutantConcentration -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;emergingPollutantConcentration">
+        <rdfs:domain rdf:resource="&riverbasin;Emerging_pollutant"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#hasUpperBound -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;hasUpperBound">
+        <rdfs:domain rdf:resource="&riverbasin;Range"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#heavyMetalConcentration -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;heavyMetalConcentration">
+        <rdfs:domain rdf:resource="&riverbasin;HeavyMetal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#suspendedSolidConcentration -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;suspendedSolidConcentration">
+        <rdfs:domain rdf:resource="&riverbasin;SuspendedSolid"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#totalNitrogenConcentration -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;totalNitrogenConcentration">
+        <rdfs:domain rdf:resource="&riverbasin;TotalNitrogen"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#totalPhosphorusConcentration -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;totalPhosphorusConcentration">
+        <rdfs:domain rdf:resource="&riverbasin;TotalPhosphorus"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#waterFlow -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;waterFlow">
+        <rdfs:domain rdf:resource="&riverbasin;Flow_water_mass"/>
+        <rdfs:subPropertyOf rdf:resource="&riverbasin;waterMassValue"/>
+        <rdfs:range rdf:resource="&owl;rational"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#waterMassValue -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;waterMassValue">
+        <rdfs:domain rdf:resource="&riverbasin;WaterMass"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#waterVolume -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;waterVolume">
+        <rdfs:domain rdf:resource="&riverbasin;Static_water_mass"/>
+        <rdfs:subPropertyOf rdf:resource="&riverbasin;waterMassValue"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#wwFlow -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;wwFlow">
+        <rdfs:subPropertyOf rdf:resource="&riverbasin;wwMassValue"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#wwMassValue -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;wwMassValue">
+        <rdfs:domain rdf:resource="&riverbasin;WWMass"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#wwVolume -->
+
+    <owl:DatatypeProperty rdf:about="&riverbasin;wwVolume">
+        <rdfs:subPropertyOf rdf:resource="&riverbasin;wwMassValue"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#AcetylsalicylicAcid -->
+
+    <owl:Class rdf:about="&riverbasin;AcetylsalicylicAcid">
+        <rdfs:subClassOf rdf:resource="&riverbasin;AnalgesicAntiinflammatory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Aluminium -->
+
+    <owl:Class rdf:about="&riverbasin;Aluminium">
+        <rdfs:subClassOf rdf:resource="&riverbasin;HeavyMetal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Ammonia -->
+
+    <owl:Class rdf:about="&riverbasin;Ammonia">
+        <rdfs:subClassOf rdf:resource="&riverbasin;TotalNitrogen"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#AnalgesicAntiinflammatory -->
+
+    <owl:Class rdf:about="&riverbasin;AnalgesicAntiinflammatory">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Emerging_pollutant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Antibiotics -->
+
+    <owl:Class rdf:about="&riverbasin;Antibiotics">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Emerging_pollutant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Beer -->
+
+    <owl:Class rdf:about="&riverbasin;Beer">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Food_industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Betablockers -->
+
+    <owl:Class rdf:about="&riverbasin;Betablockers">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Emerging_pollutant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#BiologicalOxygenDemand -->
+
+    <owl:Class rdf:about="&riverbasin;BiologicalOxygenDemand">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Pollutant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Cadmium -->
+
+    <owl:Class rdf:about="&riverbasin;Cadmium">
+        <rdfs:subClassOf rdf:resource="&riverbasin;HeavyMetal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Cannery -->
+
+    <owl:Class rdf:about="&riverbasin;Cannery">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Food_industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Ceramic -->
+
+    <owl:Class rdf:about="&riverbasin;Ceramic">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Cheese -->
+
+    <owl:Class rdf:about="&riverbasin;Cheese">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Dairy"/>
+        <owl:disjointWith rdf:resource="&riverbasin;Milk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Chemical -->
+
+    <owl:Class rdf:about="&riverbasin;Chemical">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#ChemicalOxygenDemand -->
+
+    <owl:Class rdf:about="&riverbasin;ChemicalOxygenDemand">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Pollutant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#CholesterolRegulators -->
+
+    <owl:Class rdf:about="&riverbasin;CholesterolRegulators">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Emerging_pollutant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Chromium -->
+
+    <owl:Class rdf:about="&riverbasin;Chromium">
+        <rdfs:subClassOf rdf:resource="&riverbasin;HeavyMetal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#City -->
+
+    <owl:Class rdf:about="&riverbasin;City">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WWProducer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#CleanWaterComposition -->
+
+    <owl:Class rdf:about="&riverbasin;CleanWaterComposition">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WaterComposition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#CleanWaterProducer -->
+
+    <owl:Class rdf:about="&riverbasin;CleanWaterProducer">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WaterProducer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#CleanWaterTank -->
+
+    <owl:Class rdf:about="&riverbasin;CleanWaterTank">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WaterRetainingTank"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#ClosedRange -->
+
+    <owl:Class rdf:about="&riverbasin;ClosedRange">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Range"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Collector -->
+
+    <owl:Class rdf:about="&riverbasin;Collector">
+        <rdfs:subClassOf rdf:resource="&riverbasin;ConveyorUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Combined -->
+
+    <owl:Class rdf:about="&riverbasin;Combined">
+        <rdfs:subClassOf rdf:resource="&riverbasin;SewerNetwork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Commerce -->
+
+    <owl:Class rdf:about="&riverbasin;Commerce">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WWProducer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Conveyor -->
+
+    <owl:Class rdf:about="&riverbasin;Conveyor">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:disjointWith rdf:resource="&riverbasin;ConveyorTransport"/>
+        <owl:disjointWith rdf:resource="&riverbasin;ConveyorUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#ConveyorTransport -->
+
+    <owl:Class rdf:about="&riverbasin;ConveyorTransport">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Process"/>
+        <owl:disjointWith rdf:resource="&riverbasin;ConveyorUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#ConveyorUnit -->
+
+    <owl:Class rdf:about="&riverbasin;ConveyorUnit">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Copper -->
+
+    <owl:Class rdf:about="&riverbasin;Copper">
+        <rdfs:subClassOf rdf:resource="&riverbasin;HeavyMetal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Cost -->
+
+    <owl:Class rdf:about="&riverbasin;Cost">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Cotton -->
+
+    <owl:Class rdf:about="&riverbasin;Cotton">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WithoutDye"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Dairy -->
+
+    <owl:Class rdf:about="&riverbasin;Dairy">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Food_industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Diclofenac -->
+
+    <owl:Class rdf:about="&riverbasin;Diclofenac">
+        <rdfs:subClassOf rdf:resource="&riverbasin;AnalgesicAntiinflammatory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#EconomicValue -->
+
+    <owl:Class rdf:about="&riverbasin;EconomicValue">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Emerging_pollutant -->
+
+    <owl:Class rdf:about="&riverbasin;Emerging_pollutant">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Pollutant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Emissor -->
+
+    <owl:Class rdf:about="&riverbasin;Emissor">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Conveyor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#EnviromentalValue -->
+
+    <owl:Class rdf:about="&riverbasin;EnviromentalValue">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#FastWaterFlow -->
+
+    <owl:Class rdf:about="&riverbasin;FastWaterFlow">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Flow_water_mass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Filtration -->
+
+    <owl:Class rdf:about="&riverbasin;Filtration">
+        <rdfs:subClassOf rdf:resource="&riverbasin;PrimaryTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Fish -->
+
+    <owl:Class rdf:about="&riverbasin;Fish">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Cannery"/>
+        <owl:disjointWith rdf:resource="&riverbasin;Vegetable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Flow_WW_mass -->
+
+    <owl:Class rdf:about="&riverbasin;Flow_WW_mass">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WWMass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Flow_water_mass -->
+
+    <owl:Class rdf:about="&riverbasin;Flow_water_mass">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WaterMass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Food_industry -->
+
+    <owl:Class rdf:about="&riverbasin;Food_industry">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Forging -->
+
+    <owl:Class rdf:about="&riverbasin;Forging">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Metal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Furs -->
+
+    <owl:Class rdf:about="&riverbasin;Furs">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Tanneries"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#GreenArea -->
+
+    <owl:Class rdf:about="&riverbasin;GreenArea">
+        <rdfs:subClassOf rdf:resource="&riverbasin;LandUse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#GroundWater -->
+
+    <owl:Class rdf:about="&riverbasin;GroundWater">
+        <rdfs:subClassOf rdf:resource="&riverbasin;CleanWaterProducer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Ham -->
+
+    <owl:Class rdf:about="&riverbasin;Ham">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Meat_processor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#HeavyMetal -->
+
+    <owl:Class rdf:about="&riverbasin;HeavyMetal">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Pollutant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Hides -->
+
+    <owl:Class rdf:about="&riverbasin;Hides">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Tanneries"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Highway -->
+
+    <owl:Class rdf:about="&riverbasin;Highway">
+        <rdfs:subClassOf rdf:resource="&riverbasin;LandUse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#HotCoating -->
+
+    <owl:Class rdf:about="&riverbasin;HotCoating">
+        <rdfs:subClassOf rdf:resource="&riverbasin;ProcessedFerrous"/>
+        <owl:disjointWith rdf:resource="&riverbasin;HotLamination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#HotLamination -->
+
+    <owl:Class rdf:about="&riverbasin;HotLamination">
+        <rdfs:subClassOf rdf:resource="&riverbasin;ProcessedFerrous"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Household -->
+
+    <owl:Class rdf:about="&riverbasin;Household">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WWProducer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#HydraulicPump -->
+
+    <owl:Class rdf:about="&riverbasin;HydraulicPump">
+        <rdfs:subClassOf rdf:resource="&riverbasin;ConveyorUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Ibuprofen -->
+
+    <owl:Class rdf:about="&riverbasin;Ibuprofen">
+        <rdfs:subClassOf rdf:resource="&riverbasin;AnalgesicAntiinflammatory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Industrial -->
+
+    <owl:Class rdf:about="&riverbasin;Industrial">
+        <rdfs:subClassOf rdf:resource="&riverbasin;LandUse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Industry -->
+
+    <owl:Class rdf:about="&riverbasin;Industry">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WWProducer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#LandUse -->
+
+    <owl:Class rdf:about="&riverbasin;LandUse">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#LargeCity -->
+
+    <owl:Class rdf:about="&riverbasin;LargeCity">
+        <rdfs:subClassOf rdf:resource="&riverbasin;City"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Lead -->
+
+    <owl:Class rdf:about="&riverbasin;Lead">
+        <rdfs:subClassOf rdf:resource="&riverbasin;HeavyMetal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Location -->
+
+    <owl:Class rdf:about="&riverbasin;Location">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Meat_processor -->
+
+    <owl:Class rdf:about="&riverbasin;Meat_processor">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Food_industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#MediumCity -->
+
+    <owl:Class rdf:about="&riverbasin;MediumCity">
+        <rdfs:subClassOf rdf:resource="&riverbasin;City"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Metal -->
+
+    <owl:Class rdf:about="&riverbasin;Metal">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Milk -->
+
+    <owl:Class rdf:about="&riverbasin;Milk">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Dairy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Mixed -->
+
+    <owl:Class rdf:about="&riverbasin;Mixed">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Tanneries"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Naproxen -->
+
+    <owl:Class rdf:about="&riverbasin;Naproxen">
+        <rdfs:subClassOf rdf:resource="&riverbasin;AnalgesicAntiinflammatory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Nickel -->
+
+    <owl:Class rdf:about="&riverbasin;Nickel">
+        <rdfs:subClassOf rdf:resource="&riverbasin;HeavyMetal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Nitrate -->
+
+    <owl:Class rdf:about="&riverbasin;Nitrate">
+        <rdfs:subClassOf rdf:resource="&riverbasin;TotalNitrogen"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Nitrite -->
+
+    <owl:Class rdf:about="&riverbasin;Nitrite">
+        <rdfs:subClassOf rdf:resource="&riverbasin;TotalNitrogen"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#OPenRange -->
+
+    <owl:Class rdf:about="&riverbasin;OPenRange">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Range"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Oil -->
+
+    <owl:Class rdf:about="&riverbasin;Oil">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Food_industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#OrganicNitrogen -->
+
+    <owl:Class rdf:about="&riverbasin;OrganicNitrogen">
+        <rdfs:subClassOf rdf:resource="&riverbasin;TotalNitrogen"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#OrganicPhosphorus -->
+
+    <owl:Class rdf:about="&riverbasin;OrganicPhosphorus">
+        <rdfs:subClassOf rdf:resource="&riverbasin;TotalPhosphorus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Ortophosphate -->
+
+    <owl:Class rdf:about="&riverbasin;Ortophosphate">
+        <rdfs:subClassOf rdf:resource="&riverbasin;TotalPhosphorus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Paper -->
+
+    <owl:Class rdf:about="&riverbasin;Paper">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Paper-Mill -->
+
+    <owl:Class rdf:about="&riverbasin;Paper-Mill">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Paper"/>
+        <owl:disjointWith rdf:resource="&riverbasin;Pulp"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Pig -->
+
+    <owl:Class rdf:about="&riverbasin;Pig">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Slaughterhouse_s"/>
+        <owl:disjointWith rdf:resource="&riverbasin;Poultry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Pipe -->
+
+    <owl:Class rdf:about="&riverbasin;Pipe">
+        <rdfs:subClassOf rdf:resource="&riverbasin;ConveyorUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Poliphosphate -->
+
+    <owl:Class rdf:about="&riverbasin;Poliphosphate">
+        <rdfs:subClassOf rdf:resource="&riverbasin;TotalPhosphorus"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Pollutant -->
+
+    <owl:Class rdf:about="&riverbasin;Pollutant">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Poultry -->
+
+    <owl:Class rdf:about="&riverbasin;Poultry">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Slaughterhouse_s"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#PreTreatment -->
+
+    <owl:Class rdf:about="&riverbasin;PreTreatment">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WWTreatmentUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#PrimaryTreatment -->
+
+    <owl:Class rdf:about="&riverbasin;PrimaryTreatment">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WWTreatmentUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Printing-houses -->
+
+    <owl:Class rdf:about="&riverbasin;Printing-houses">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Process -->
+
+    <owl:Class rdf:about="&riverbasin;Process"/>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#ProcessedFerrous -->
+
+    <owl:Class rdf:about="&riverbasin;ProcessedFerrous">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Metal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#PsychiatricUse -->
+
+    <owl:Class rdf:about="&riverbasin;PsychiatricUse">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Emerging_pollutant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Pulp -->
+
+    <owl:Class rdf:about="&riverbasin;Pulp">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Paper"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Range -->
+
+    <owl:Class rdf:about="&riverbasin;Range"/>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Residential -->
+
+    <owl:Class rdf:about="&riverbasin;Residential">
+        <rdfs:subClassOf rdf:resource="&riverbasin;LandUse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#RetainingWithSettling -->
+
+    <owl:Class rdf:about="&riverbasin;RetainingWithSettling">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WaterTanKRetaining"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#RetainingWithoutSettling -->
+
+    <owl:Class rdf:about="&riverbasin;RetainingWithoutSettling">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WaterTanKRetaining"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#RiverSection -->
+
+    <owl:Class rdf:about="&riverbasin;RiverSection">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#RoughingGrid -->
+
+    <owl:Class rdf:about="&riverbasin;RoughingGrid">
+        <rdfs:subClassOf rdf:resource="&riverbasin;SecondaryTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Rubber -->
+
+    <owl:Class rdf:about="&riverbasin;Rubber">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Runoff -->
+
+    <owl:Class rdf:about="&riverbasin;Runoff">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WWProducer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Sausage_industry -->
+
+    <owl:Class rdf:about="&riverbasin;Sausage_industry">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Meat_processor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#SecondarySedimentation -->
+
+    <owl:Class rdf:about="&riverbasin;SecondarySedimentation">
+        <rdfs:subClassOf rdf:resource="&riverbasin;SecondaryTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#SecondaryTreatment -->
+
+    <owl:Class rdf:about="&riverbasin;SecondaryTreatment">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WWTreatmentUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Sedimentation -->
+
+    <owl:Class rdf:about="&riverbasin;Sedimentation">
+        <rdfs:subClassOf rdf:resource="&riverbasin;PrimaryTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#SewerNetwork -->
+
+    <owl:Class rdf:about="&riverbasin;SewerNetwork">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Conveyor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Slaughterhouse_s -->
+
+    <owl:Class rdf:about="&riverbasin;Slaughterhouse_s">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Food_industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#SlowWaterFlow -->
+
+    <owl:Class rdf:about="&riverbasin;SlowWaterFlow">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Flow_water_mass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#SmallCity -->
+
+    <owl:Class rdf:about="&riverbasin;SmallCity">
+        <rdfs:subClassOf rdf:resource="&riverbasin;City"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#SocialFactor -->
+
+    <owl:Class rdf:about="&riverbasin;SocialFactor">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment>Marta: Lluís ha de suggerir</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#SocialValue -->
+
+    <owl:Class rdf:about="&riverbasin;SocialValue">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Spillway -->
+
+    <owl:Class rdf:about="&riverbasin;Spillway">
+        <rdfs:subClassOf rdf:resource="&riverbasin;ConveyorUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Starch -->
+
+    <owl:Class rdf:about="&riverbasin;Starch">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Food_industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Static_WW_mass -->
+
+    <owl:Class rdf:about="&riverbasin;Static_WW_mass">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WWMass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Static_water_mass -->
+
+    <owl:Class rdf:about="&riverbasin;Static_water_mass">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WaterMass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#StormWater -->
+
+    <owl:Class rdf:about="&riverbasin;StormWater">
+        <rdfs:subClassOf rdf:resource="&riverbasin;CleanWaterProducer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#SurfaceTreatment -->
+
+    <owl:Class rdf:about="&riverbasin;SurfaceTreatment">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Metal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#SurfaceWater -->
+
+    <owl:Class rdf:about="&riverbasin;SurfaceWater">
+        <rdfs:subClassOf rdf:resource="&riverbasin;CleanWaterProducer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#SuspendedSolid -->
+
+    <owl:Class rdf:about="&riverbasin;SuspendedSolid">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Pollutant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Tanneries -->
+
+    <owl:Class rdf:about="&riverbasin;Tanneries">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#TertiaryTreatment -->
+
+    <owl:Class rdf:about="&riverbasin;TertiaryTreatment">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WWTreatmentUnit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Textile -->
+
+    <owl:Class rdf:about="&riverbasin;Textile">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#TotalNitrogen -->
+
+    <owl:Class rdf:about="&riverbasin;TotalNitrogen">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Pollutant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#TotalPhosphorus -->
+
+    <owl:Class rdf:about="&riverbasin;TotalPhosphorus">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Pollutant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Unitary -->
+
+    <owl:Class rdf:about="&riverbasin;Unitary">
+        <rdfs:subClassOf rdf:resource="&riverbasin;SewerNetwork"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Value -->
+
+    <owl:Class rdf:about="&riverbasin;Value">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Vegetable -->
+
+    <owl:Class rdf:about="&riverbasin;Vegetable">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Cannery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WWComposition -->
+
+    <owl:Class rdf:about="&riverbasin;WWComposition">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WaterComposition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WWDischarge -->
+
+    <owl:Class rdf:about="&riverbasin;WWDischarge">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Cost"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WWMass -->
+
+    <owl:Class rdf:about="&riverbasin;WWMass"/>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WWProducer -->
+
+    <owl:Class rdf:about="&riverbasin;WWProducer">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WaterProducer"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WWTP"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WWTank"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WWTreatment"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WWTreatmentUnit"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WaterTanKRetaining"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WWTP -->
+
+    <owl:Class rdf:about="&riverbasin;WWTP">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WWTank"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WWTreatment"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WWTreatmentUnit"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WaterTanKRetaining"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WWTank -->
+
+    <owl:Class rdf:about="&riverbasin;WWTank">
+        <rdfs:subClassOf rdf:resource="&riverbasin;WaterRetainingTank"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WWTreatment"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WWTreatmentUnit"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WaterRetainingTank"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WaterTanKRetaining"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WWTreatment -->
+
+    <owl:Class rdf:about="&riverbasin;WWTreatment">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Cost"/>
+        <rdfs:subClassOf rdf:resource="&riverbasin;Process"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WWTreatmentUnit"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WaterTanKRetaining"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WWTreatmentUnit -->
+
+    <owl:Class rdf:about="&riverbasin;WWTreatmentUnit">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WaterTanKRetaining"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WaterComposition -->
+
+    <owl:Class rdf:about="&riverbasin;WaterComposition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WaterMass -->
+
+    <owl:Class rdf:about="&riverbasin;WaterMass"/>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WaterProducer -->
+
+    <owl:Class rdf:about="&riverbasin;WaterProducer">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <owl:disjointWith rdf:resource="&riverbasin;WaterRetainingTank"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WaterRetainingTank -->
+
+    <owl:Class rdf:about="&riverbasin;WaterRetainingTank">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WaterTanKRetaining -->
+
+    <owl:Class rdf:about="&riverbasin;WaterTanKRetaining">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WithDye -->
+
+    <owl:Class rdf:about="&riverbasin;WithDye">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Textile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#WithoutDye -->
+
+    <owl:Class rdf:about="&riverbasin;WithoutDye">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Textile"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Wood -->
+
+    <owl:Class rdf:about="&riverbasin;Wood">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Industry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#XRayContrastMedia -->
+
+    <owl:Class rdf:about="&riverbasin;XRayContrastMedia">
+        <rdfs:subClassOf rdf:resource="&riverbasin;Emerging_pollutant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#Zinc -->
+
+    <owl:Class rdf:about="&riverbasin;Zinc">
+        <rdfs:subClassOf rdf:resource="&riverbasin;HeavyMetal"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/riverbasin/ontologies/2013/11/riverbasin#RangeExemple -->
+
+    <owl:NamedIndividual rdf:about="&riverbasin;RangeExemple">
+        <riverbasin:hasUpperBound rdf:datatype="&xsd;double">5.0</riverbasin:hasUpperBound>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&riverbasin;Forging"/>
+            <rdf:Description rdf:about="&riverbasin;ProcessedFerrous"/>
+            <rdf:Description rdf:about="&riverbasin;SurfaceTreatment"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&riverbasin;Chemical"/>
+            <rdf:Description rdf:about="&riverbasin;Metal"/>
+            <rdf:Description rdf:about="&riverbasin;Paper"/>
+            <rdf:Description rdf:about="&riverbasin;Printing-houses"/>
+            <rdf:Description rdf:about="&riverbasin;Rubber"/>
+            <rdf:Description rdf:about="&riverbasin;Tanneries"/>
+            <rdf:Description rdf:about="&riverbasin;Textile"/>
+            <rdf:Description rdf:about="&riverbasin;Wood"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&riverbasin;Beer"/>
+            <rdf:Description rdf:about="&riverbasin;Cannery"/>
+            <rdf:Description rdf:about="&riverbasin;Dairy"/>
+            <rdf:Description rdf:about="&riverbasin;Oil"/>
+            <rdf:Description rdf:about="&riverbasin;Slaughterhouse_s"/>
+            <rdf:Description rdf:about="&riverbasin;Starch"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&riverbasin;Furs"/>
+            <rdf:Description rdf:about="&riverbasin;Hides"/>
+            <rdf:Description rdf:about="&riverbasin;Mixed"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,28 @@
+
+
+TBD:
+	· Add normative elements to the taxonomy
+	· Instantiate pollutants based on simulation data provided by Quim
+
+	- In MetalloidsAndMetals:
+		Reorganize HeavyMetals (maybe the class should be redefined)
+	- Questions:
+		BOD, COD, SS… are they pollutants or pollution indicators?
+
+Done: 2014-10-09
+
+· Adding elements from official regulations
+
+Done: 2014-10-06 (yyyy-mm-dd)
+
+· Adding normative elements to the taxonomy
+
+· Añadir objetivo que nos diga cual es el array de capacidades tratamiento del treater
+	·O almenos explicar el vector en texto
+· Añadir el elemento sewer
+	· Todos tienen una unidad de tiempo y se pueden conectar entre sí
+· Buscar más relaciones de market
+· Quitar discharge reference prices de Industrial a River
+· El receiver debe preguntar al treater cual es el estado de la planta
+· Estandarizar nombres (o todos W, o todos WW todos WWT)
+· 

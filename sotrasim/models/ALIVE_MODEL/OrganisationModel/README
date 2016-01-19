@@ -1,0 +1,12 @@
+Lock: Luis
+
+Changes Luis 27-11-2014:
+Some dependencies are put in the wrong direction (storage of industrial WW, Collect river sensor data, Verify discharge...)
+Two WWTreater roles
+BypassMeteoWW is delegated to competent authority, this is wrong 
+
+Changes Luis 1-12-2014
+
+Mini.opera more compact.
+Fixed some issues with regards to interaction diagram
+Applied Javier’s comments on IS. Changed WWTPBypassInfluent landmarks

@@ -6,10 +6,16 @@ The root project contains nomodei for norm monitoring
 The sotrasim folder contains a project branch for visualisations on social simulations for the tragedy of the commons
 
 # sotrasim
+## contents
+- Media: Videos for easily checking program behaviour withouth running/installing
+- models: [ALIVE](http://sourceforge.net/projects/ict-alive/) Models used for the software.
+- mongoExport: Sample exported data from riverbasim simulator
+- scenePattern: Simulator-ALIVE scene software visualizer
+
 ## scenePattern
 Proof of concept tests for the scene pattern visualizations
 
-## testing
+### testing
 Running the following code:
 ```javascript
 cd nomodei/sotrasim/scenePattern
@@ -100,6 +106,11 @@ Import a more complex scene by running:
  python sceneParser.py Test.opera
 ```
 Simulate activity in the complex scene by running:
+```
+ cd sotrasim
+ python sotrasim.py
+```
+Or import our pre-generated data-set as seen in our publications by running:
 ```
  cd sotrasim
  python sotrasim.py

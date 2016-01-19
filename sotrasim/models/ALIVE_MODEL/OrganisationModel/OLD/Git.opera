@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:net.sf.ictalive.operetta="http://ict-alive.sourceforge.net/operetta/OM/1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation">
+  <net.sf.ictalive.operetta:OperAModel xmi:id="_RO-mgBZiEeS0xuVGn_VuJw" Name="New OperA Model">
+    <om xmi:type="net.sf.ictalive.operetta:OM" xmi:id="_RO-mgRZiEeS0xuVGn_VuJw">
+      <ss xmi:type="net.sf.ictalive.operetta:SS" xmi:id="_RO_NkBZiEeS0xuVGn_VuJw">
+        <roles xmi:type="net.sf.ictalive.operetta:Role" xmi:id="_nc7PYBZiEeS0xuVGn_VuJw" Name="IndustrialWWRetainer" conceptName="_L0SOYBfhEeSkadyOqDMLMw" objectives="_d5vq4BcQEeS5KY8C7DOwFg _M2wQoBfkEeSkadyOqDMLMw"/>
+        <roles xmi:type="net.sf.ictalive.operetta:Role" xmi:id="_NXz1oUjAEeSl_9oR-F4jKA" Name="RiverSensor" conceptName="_OLeHMEjAEeSl_9oR-F4jKA" objectives="_ZKu-UBZxEeS0xuVGn_VuJw"/>
+        <roles xmi:type="net.sf.ictalive.operetta:Role" xmi:id="_ptSIcBZiEeS0xuVGn_VuJw" Name="WWTreater" conceptName="_qQnfABZiEeS0xuVGn_VuJw" objectives="_cp7XIBZzEeS0xuVGn_VuJw _OHnwkBb9EeS4lNRigPBnKA _pkMJ0BgCEeSkadyOqDMLMw"/>
+        <roles xmi:type="net.sf.ictalive.operetta:Role" xmi:id="_26E54BZiEeS0xuVGn_VuJw" Name="HouseholdWWDischarger" conceptName="_9su5cBZiEeS0xuVGn_VuJw" objectives="_vs8HQBcyEeS5KY8C7DOwFg _Qv03IBfoEeSkadyOqDMLMw"/>
+        <roles xmi:type="net.sf.ictalive.operetta:Role" xmi:id="_-bOXIBZiEeS0xuVGn_VuJw" Name="IndustrialWWDischarger" conceptName="_A1DVQBZjEeS0xuVGn_VuJw" objectives="_M2wQoBfkEeSkadyOqDMLMw _jIVBABf_EeSkadyOqDMLMw"/>
+        <roles xmi:type="net.sf.ictalive.operetta:Role" xmi:id="_BLopQBZjEeS0xuVGn_VuJw" Name="MeteoRetainer" conceptName="_JUB4IBfhEeSkadyOqDMLMw" objectives="_d5vq4BcQEeS5KY8C7DOwFg _0mc04BcnEeS5KY8C7DOwFg"/>
+        <roles xmi:type="net.sf.ictalive.operetta:Role" xmi:id="_aL3zkBZjEeS0xuVGn_VuJw" Name="RiverQualityManager" conceptName="_5LQ2EBfmEeSkadyOqDMLMw" objectives="_dN5GEBgDEeSkadyOqDMLMw _BU4SgBcsEeS5KY8C7DOwFg _fBsP4BgMEeSkFuyStMykeA _1TIRoBgMEeSkFuyStMykeA"/>
+        <roles xmi:type="net.sf.ictalive.operetta:Role" xmi:id="_kSgoMBZqEeS0xuVGn_VuJw" Name="IndustrialWWGenerator" conceptName="_nyAN4BZqEeS0xuVGn_VuJw" objectives="_yt1QABZvEeS0xuVGn_VuJw"/>
+        <roles xmi:type="net.sf.ictalive.operetta:Role" xmi:id="_Lj3-QBb5EeS4lNRigPBnKA" Name="WWReceiver" conceptName="_MyjX4Bb5EeS4lNRigPBnKA" objectives="_JY5kYBcNEeS5KY8C7DOwFg _XVXT0BgAEeSkadyOqDMLMw _xN11EBf9EeSkadyOqDMLMw"/>
+        <roles xmi:type="net.sf.ictalive.operetta:Role" xmi:id="_Xf4yYBb7EeS4lNRigPBnKA" Name="WWTPDischarger" conceptName="_5ulqwBfUEeSkadyOqDMLMw" objectives="_fRLo8BgCEeSkadyOqDMLMw"/>
+        <roles xmi:type="net.sf.ictalive.operetta:Role" xmi:id="_jTM6gBceEeS5KY8C7DOwFg" Name="SewageInspector" conceptName="_yqnJYBceEeS5KY8C7DOwFg" objectives="_DtliMBcfEeS5KY8C7DOwFg"/>
+        <roles xmi:type="net.sf.ictalive.operetta:Role" xmi:id="_P-VM8BfhEeSkadyOqDMLMw" Name="MeteoDischarger" conceptName="_QrTAoBfhEeSkadyOqDMLMw" objectives="_0mc04BcnEeS5KY8C7DOwFg _GTBg8Bb_EeS4lNRigPBnKA"/>
+        <roles xmi:type="net.sf.ictalive.operetta:Role" xmi:id="_abkX8UihEeSMyvs0f1v9yA" Name="WSensor" conceptName="_fLH3UEihEeSMyvs0f1v9yA" objectives="_14_3UBcmEeS5KY8C7DOwFg _28RAMEjAEeSl_9oR-F4jKA"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_Qv03IBfoEeSkadyOqDMLMw" Name="DischargeHouseholdWW" conceptName="_UoJMgBfoEeSkadyOqDMLMw" stateDescription="_PFIIoBjUEeSnSvmQUSrHxg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_M2wQoBfkEeSkadyOqDMLMw" Name="DischargeIndustrialWW" conceptName="_J5dqEBcpEeS5KY8C7DOwFg" stateDescription="_B2vJ0BjWEeSnSvmQUSrHxg" subObjectives="_HDDdoBcpEeS5KY8C7DOwFg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_P45w0BfVEeSkadyOqDMLMw" Name="DischargeTreatedWW" conceptName="_rE2rUBgCEeSkadyOqDMLMw" stateDescription="_KJOPUBjUEeSnSvmQUSrHxg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_kjBPcBfVEeSkadyOqDMLMw" Name="DischargeBypass" conceptName="_7XAJAEonEeSIdPsWaTTbig" stateDescription="_EcUW4BjUEeSnSvmQUSrHxg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_OBBJwBczEeS5KY8C7DOwFg" Name="ObtainMeteoWWCharacteristics" conceptName="_atNvkBczEeS5KY8C7DOwFg" stateDescription="_33mSEBjTEeSnSvmQUSrHxg" subObjectives="_14_3UBcmEeS5KY8C7DOwFg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_14_3UBcmEeS5KY8C7DOwFg" Name="ObtainWWCharacteristics" conceptName="_A7D2kBcnEeS5KY8C7DOwFg" stateDescription="_4RnKABjSEeSnSvmQUSrHxg" subObjectives="_9KSQcBciEeS5KY8C7DOwFg _6FIdYBciEeS5KY8C7DOwFg _bHTEcEjAEeSl_9oR-F4jKA"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_vs8HQBcyEeS5KY8C7DOwFg" Name="ObtainHouseholdWWCharacteristics" conceptName="_xmQZUBcyEeS5KY8C7DOwFg" subObjectives="_14_3UBcmEeS5KY8C7DOwFg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_BU4SgBcsEeS5KY8C7DOwFg" Name="ObtainDischargeReferencePrices" conceptName="_HHCLYBf9EeSkadyOqDMLMw" stateDescription="_eq3R8BjVEeSnSvmQUSrHxg" subObjectives="_QjLpgBb8EeS4lNRigPBnKA"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_HDDdoBcpEeS5KY8C7DOwFg" Name="AssessAmountOfIndustrialWWDischarge" conceptName="_SKG5QBfnEeSkadyOqDMLMw" stateDescription="_wFadQBjVEeSnSvmQUSrHxg" subObjectives="_PLu08BcpEeS5KY8C7DOwFg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_PLu08BcpEeS5KY8C7DOwFg" Name="ObtainDischargeReservedCost" conceptName="_WTQLABgKEeSkFuyStMykeA" stateDescription="_o1mAkBjVEeSnSvmQUSrHxg" subObjectives="_14_3UBcmEeS5KY8C7DOwFg _BU4SgBcsEeS5KY8C7DOwFg _PTHiQUfwEeSRJYNxRRGnTQ"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_0mc04BcnEeS5KY8C7DOwFg" Name="DischargeMeteoWW" conceptName="_MQFqgBfqEeSkadyOqDMLMw" stateDescription="_QD9dgBjWEeSnSvmQUSrHxg" subObjectives="_SSCT8BfsEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_9KSQcBciEeS5KY8C7DOwFg" Name="ObtainWWPollutantConcentration" conceptName="__u4UIBciEeS5KY8C7DOwFg" stateDescription="_8dYm4BjSEeSnSvmQUSrHxg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_DtliMBcfEeS5KY8C7DOwFg" Name="VerifyDischarge" conceptName="_-gNB4BcfEeS5KY8C7DOwFg" subObjectives="_tnPywBgGEeSkadyOqDMLMw _yiSwcBgGEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_SSCT8BfsEeSkadyOqDMLMw" Name="AssessMeteoWWDestination" conceptName="_X9NuEBfsEeSkadyOqDMLMw" stateDescription="_Hg0XwBjWEeSnSvmQUSrHxg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_d5vq4BcQEeS5KY8C7DOwFg" Name="StoreIndustrialWW" conceptName="_Km3RoBfkEeSkadyOqDMLMw" stateDescription="_8a6zoBjQEeSnSvmQUSrHxg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_GWdzcBfkEeSkadyOqDMLMw" Name="StoreIndustrialWW" conceptName="_Km3RoBfkEeSkadyOqDMLMw" stateDescription="_PmnMcBjREeSnSvmQUSrHxg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_yt1QABZvEeS0xuVGn_VuJw" Name="MakeProfit" conceptName="_4XiDcBZvEeS0xuVGn_VuJw" stateDescription="_tlc-wBjREeSnSvmQUSrHxg" subObjectives="_vKrSUBZvEeS0xuVGn_VuJw _GWdzcBfkEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_vKrSUBZvEeS0xuVGn_VuJw" Name="IndustrialWWGeneration" conceptName="_6itsIBZwEeS0xuVGn_VuJw" stateDescription="_zlnKYBjREeSnSvmQUSrHxg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_zeqakBZwEeS0xuVGn_VuJw" Name="HouseholdWWGeneration" conceptName="_4CZrgBZwEeS0xuVGn_VuJw" stateDescription="_3cQEwBjREeSnSvmQUSrHxg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_NkyO4BZxEeS0xuVGn_VuJw" Name="CalculateRiverWaterQuality" conceptName="_eMcp8BgMEeSkFuyStMykeA" stateDescription="_UaAGIBjVEeSnSvmQUSrHxg" subObjectives="_ZKu-UBZxEeS0xuVGn_VuJw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_ZKu-UBZxEeS0xuVGn_VuJw" Name="CollectRiverSensorData" conceptName="_sX1NsBjUEeSnSvmQUSrHxg" stateDescription="_3I-cEBjUEeSnSvmQUSrHxg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_cp7XIBZzEeS0xuVGn_VuJw" Name="WWTreatment" conceptName="_fIE0kBZzEeS0xuVGn_VuJw" stateDescription="_AV9QYBjSEeSnSvmQUSrHxg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_QjLpgBb8EeS4lNRigPBnKA" Name="AssessRiverWaterQuality" conceptName="_YUsHIBZxEeS0xuVGn_VuJw" subObjectives="_NkyO4BZxEeS0xuVGn_VuJw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_OHnwkBb9EeS4lNRigPBnKA" Name="AchieveAdequatePerformance" conceptName="_JkXgsBjSEeSnSvmQUSrHxg" stateDescription="_T2KrMBjTEeSnSvmQUSrHxg" subObjectives="_Vsf3QBb9EeS4lNRigPBnKA"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_Vsf3QBb9EeS4lNRigPBnKA" Name="CalculateTreatmentEfficiency" conceptName="_xVzhcBgBEeSkadyOqDMLMw" stateDescription="_T2KrMBjTEeSnSvmQUSrHxg" subObjectives="_kLNvcBgBEeSkadyOqDMLMw _E8GLkBgCEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_GTBg8Bb_EeS4lNRigPBnKA" Name="ObtainMeteoWWCharacteristics" conceptName="_atNvkBczEeS5KY8C7DOwFg" stateDescription="_CmZpABjSEeSnSvmQUSrHxg" subObjectives="_14_3UBcmEeS5KY8C7DOwFg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_JY5kYBcNEeS5KY8C7DOwFg" Name="ManageWWTPInfluent" conceptName="_U3ECMBf8EeSkadyOqDMLMw" subObjectives="_9kP_sBcOEeS5KY8C7DOwFg _iYZxMBgFEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_9kP_sBcOEeS5KY8C7DOwFg" Name="CalculateIndustrialWWDischargePrices" conceptName="_FbczUBf9EeSkadyOqDMLMw" subObjectives="_BU4SgBcsEeS5KY8C7DOwFg _aAxD0Bc0EeS5KY8C7DOwFg _Jcpp0Bf7EeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_aAxD0Bc0EeS5KY8C7DOwFg" Name="ObtainTreatmentEfficiency" conceptName="_6GH50Bf8EeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_FOAUYBfVEeSkadyOqDMLMw" Name="ObtainEffluentCharacteristics" conceptName="_HXKZQBfVEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_4DitMBcvEeS5KY8C7DOwFg" Name="CalculateTreatementEfficiency" conceptName="_9T3vYBfUEeSkadyOqDMLMw" subObjectives="_931_IBfUEeSkadyOqDMLMw _FOAUYBfVEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_931_IBfUEeSkadyOqDMLMw" Name="ObtainInfluentCharacteristics" conceptName="__quSABfUEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_agFiQBciEeS5KY8C7DOwFg" Name="DischargeInSewer" conceptName="_8_1vEEonEeSIdPsWaTTbig"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_6FIdYBciEeS5KY8C7DOwFg" Name="ObtainWWVolume" conceptName="_8VqVkBciEeS5KY8C7DOwFg" stateDescription="_4RcK4BjSEeSnSvmQUSrHxg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_ZuM6oBfYEeSkadyOqDMLMw" Name="SetPollutantLimits" conceptName="_9uwqkEonEeSIdPsWaTTbig"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_cp52wBfYEeSkadyOqDMLMw" Name="ObtainWaterCharacteristics" conceptName="_heTZ4BfYEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_ao36sBf6EeSkadyOqDMLMw" Name="ObtainWWTotalLimits" conceptName="_CduI0Bf7EeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_Jcpp0Bf7EeSkadyOqDMLMw" Name="ObtainIndustrialWWCharacteristics" conceptName="_OcYTMBf7EeSkadyOqDMLMw" subObjectives="_14_3UBcmEeS5KY8C7DOwFg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_xN11EBf9EeSkadyOqDMLMw" Name="CollectWWInfluentCharacteristics" conceptName="_gUXEkBf_EeSkadyOqDMLMw" subObjectives="_14_3UBcmEeS5KY8C7DOwFg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_jIVBABf_EeSkadyOqDMLMw" Name="CollectIndustrialWWDischargeCharacteristics" conceptName="_vzKU4Bf_EeSkadyOqDMLMw" subObjectives="_14_3UBcmEeS5KY8C7DOwFg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_XVXT0BgAEeSkadyOqDMLMw" Name="EvaluateInfluentDestination" conceptName="_ZXp7sBgAEeSkadyOqDMLMw" subObjectives="_k92XMBgKEeSkFuyStMykeA _aBfi4BgAEeSkadyOqDMLMw _g6qaIBgAEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_aBfi4BgAEeSkadyOqDMLMw" Name="Bypass" conceptName="_dXBUQBgAEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_g6qaIBgAEeSkadyOqDMLMw" Name="TreatInfluent" conceptName="_jmToYBf9EeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_kLNvcBgBEeSkadyOqDMLMw" Name="ObtainInfluentCharacteristics" conceptName="__quSABfUEeSkadyOqDMLMw" stateDescription="_C1WOgBjTEeSnSvmQUSrHxg" subObjectives="_14_3UBcmEeS5KY8C7DOwFg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_E8GLkBgCEeSkadyOqDMLMw" Name="ObtainEffluentCharacteristics" conceptName="_HXKZQBfVEeSkadyOqDMLMw" stateDescription="_4R-WYBjSEeSnSvmQUSrHxg" subObjectives="_14_3UBcmEeS5KY8C7DOwFg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_fRLo8BgCEeSkadyOqDMLMw" Name="DischargeWW" conceptName="_iZ004BgCEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_pkMJ0BgCEeSkadyOqDMLMw" Name="DischargeTreatedWW" conceptName="_rE2rUBgCEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_28RAMEjAEeSl_9oR-F4jKA" Name="ObtainWWCharacteristicsLog" conceptName="_4NwdQEjAEeSl_9oR-F4jKA"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_bHTEcEjAEeSl_9oR-F4jKA" Name="LogWWCharacteristics" conceptName="_dICNIEjAEeSl_9oR-F4jKA"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_dN5GEBgDEeSkadyOqDMLMw" Name="CalculateWWTPNewEffluentLimits" conceptName="_itYNkBgDEeSkadyOqDMLMw" subObjectives="_QjLpgBb8EeS4lNRigPBnKA"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_1kqAIBgEEeSkadyOqDMLMw" Name="CalculateIndustrialWWAvailability" conceptName="_2sApwBgEEeSkadyOqDMLMw" subObjectives="_vs8HQBcyEeS5KY8C7DOwFg _E7GlsBgFEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_E7GlsBgFEeSkadyOqDMLMw" Name="ObtainMeteoWWCharacteristics" conceptName="_atNvkBczEeS5KY8C7DOwFg" subObjectives="_14_3UBcmEeS5KY8C7DOwFg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_iYZxMBgFEeSkadyOqDMLMw" Name="CalculateIndustrialWWLimits" conceptName="_pRnEsBgFEeSkadyOqDMLMw" subObjectives="_1kqAIBgEEeSkadyOqDMLMw _aAxD0Bc0EeS5KY8C7DOwFg _CLEmsBgIEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_tnPywBgGEeSkadyOqDMLMw" Name="ObtainIndustrialWWDischargeCharacteristics" conceptName="_wEl-8BgGEeSkadyOqDMLMw" subObjectives="_28RAMEjAEeSl_9oR-F4jKA"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_yiSwcBgGEeSkadyOqDMLMw" Name="ObtainWWTPInfluentCharacteristics" conceptName="_0ggwoBgGEeSkadyOqDMLMw" subObjectives="_28RAMEjAEeSl_9oR-F4jKA"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_CLEmsBgIEeSkadyOqDMLMw" Name="ObtainWWTPNewEffluentLimits" conceptName="_BgEMwBgGEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_k92XMBgKEeSkFuyStMykeA" Name="ObtainInfluentCharacteristics" conceptName="__quSABfUEeSkadyOqDMLMw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_fBsP4BgMEeSkFuyStMykeA" Name="EnforceWaterQualityPolicies" conceptName="_kYlcEBgMEeSkFuyStMykeA" subObjectives="_QjLpgBb8EeS4lNRigPBnKA _sGx20BgMEeSkFuyStMykeA"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_sGx20BgMEeSkFuyStMykeA" Name="VerifyDischarge" conceptName="_-gNB4BcfEeS5KY8C7DOwFg"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_1TIRoBgMEeSkFuyStMykeA" Name="VerifyWWTPEffluent" conceptName="_235QABgMEeSkFuyStMykeA" subObjectives="_ZKu-UBZxEeS0xuVGn_VuJw"/>
+        <objectives xmi:type="net.sf.ictalive.operetta:Objective" xmi:id="_PTHiQUfwEeSRJYNxRRGnTQ" Name="ObtainDischargeReceiverPrices" conceptName="_kKLQsEfwEeSRJYNxRRGnTQ"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:HierarchyDependency" xmi:id="_vqLgYEjFEeSl_9oR-F4jKA" ID="D459" ObjectOfDependency="_14_3UBcmEeS5KY8C7DOwFg" Dependant="_aL3zkBZjEeS0xuVGn_VuJw" Dependee="_abkX8UihEeSMyvs0f1v9yA"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:HierarchyDependency" xmi:id="_36TjgEjFEeSl_9oR-F4jKA" ID="D462" ObjectOfDependency="_ZKu-UBZxEeS0xuVGn_VuJw" Dependant="_NXz1oUjAEeSl_9oR-F4jKA" Dependee="_aL3zkBZjEeS0xuVGn_VuJw"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:HierarchyDependency" xmi:id="_8VD3kEjFEeSl_9oR-F4jKA" ID="D467" ObjectOfDependency="_14_3UBcmEeS5KY8C7DOwFg" Dependant="_-bOXIBZiEeS0xuVGn_VuJw" Dependee="_abkX8UihEeSMyvs0f1v9yA"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:HierarchyDependency" xmi:id="_-TJU4EjFEeSl_9oR-F4jKA" ID="D471" ObjectOfDependency="_14_3UBcmEeS5KY8C7DOwFg" Dependant="_Lj3-QBb5EeS4lNRigPBnKA" Dependee="_abkX8UihEeSMyvs0f1v9yA"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:HierarchyDependency" xmi:id="_BW4ysEjGEeSl_9oR-F4jKA" ID="D476" ObjectOfDependency="_14_3UBcmEeS5KY8C7DOwFg" Dependant="_26E54BZiEeS0xuVGn_VuJw" Dependee="_abkX8UihEeSMyvs0f1v9yA"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:HierarchyDependency" xmi:id="_DsW1QEjGEeSl_9oR-F4jKA" ID="D482" ObjectOfDependency="_14_3UBcmEeS5KY8C7DOwFg" Dependant="_ptSIcBZiEeS0xuVGn_VuJw" Dependee="_abkX8UihEeSMyvs0f1v9yA"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:HierarchyDependency" xmi:id="_E4_AcEjGEeSl_9oR-F4jKA" ID="D483" ObjectOfDependency="_14_3UBcmEeS5KY8C7DOwFg" Dependant="_P-VM8BfhEeSkadyOqDMLMw" Dependee="_abkX8UihEeSMyvs0f1v9yA"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:HierarchyDependency" xmi:id="_P9nLgEjGEeSl_9oR-F4jKA" ID="D498" ObjectOfDependency="_d5vq4BcQEeS5KY8C7DOwFg" Dependant="_nc7PYBZiEeS0xuVGn_VuJw" Dependee="_kSgoMBZqEeS0xuVGn_VuJw"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:HierarchyDependency" xmi:id="_kgFxEEjGEeSl_9oR-F4jKA" ID="D555" ObjectOfDependency="_M2wQoBfkEeSkadyOqDMLMw" Dependant="_nc7PYBZiEeS0xuVGn_VuJw" Dependee="_-bOXIBZiEeS0xuVGn_VuJw"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:HierarchyDependency" xmi:id="_rfz8QEjGEeSl_9oR-F4jKA" ID="D568" ObjectOfDependency="_BU4SgBcsEeS5KY8C7DOwFg" Dependant="_-bOXIBZiEeS0xuVGn_VuJw" Dependee="_aL3zkBZjEeS0xuVGn_VuJw"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:MarketDependency" xmi:id="_00qLwEjGEeSl_9oR-F4jKA" ID="D610" ObjectOfDependency="_PTHiQUfwEeSRJYNxRRGnTQ" Dependant="_-bOXIBZiEeS0xuVGn_VuJw" Dependee="_Lj3-QBb5EeS4lNRigPBnKA"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:HierarchyDependency" xmi:id="_8_35sEjGEeSl_9oR-F4jKA" ID="D625" ObjectOfDependency="_BU4SgBcsEeS5KY8C7DOwFg" Dependant="_Lj3-QBb5EeS4lNRigPBnKA" Dependee="_aL3zkBZjEeS0xuVGn_VuJw"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:HierarchyDependency" xmi:id="_ebNBAEjHEeSl_9oR-F4jKA" ID="D641" ObjectOfDependency="_aBfi4BgAEeSkadyOqDMLMw" Dependant="_Lj3-QBb5EeS4lNRigPBnKA" Dependee="_Xf4yYBb7EeS4lNRigPBnKA"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:HierarchyDependency" xmi:id="_0cOBIEjHEeSl_9oR-F4jKA" ID="D658" ObjectOfDependency="_SSCT8BfsEeSkadyOqDMLMw" Dependant="_P-VM8BfhEeSkadyOqDMLMw" Dependee="_Lj3-QBb5EeS4lNRigPBnKA"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:HierarchyDependency" xmi:id="__vgTQEjHEeSl_9oR-F4jKA" ID="D676" ObjectOfDependency="_0mc04BcnEeS5KY8C7DOwFg" Dependant="_BLopQBZjEeS0xuVGn_VuJw" Dependee="_P-VM8BfhEeSkadyOqDMLMw"/>
+        <dependencies xmi:type="net.sf.ictalive.operetta:HierarchyDependency" xmi:id="_JT-TIEjIEeSl_9oR-F4jKA" ID="D695" ObjectOfDependency="_DtliMBcfEeS5KY8C7DOwFg" Dependant="_jTM6gBceEeS5KY8C7DOwFg" Dependee="_aL3zkBZjEeS0xuVGn_VuJw"/>
+      </ss>
+      <is xmi:type="net.sf.ictalive.operetta:IS" xmi:id="_RO_NkRZiEeS0xuVGn_VuJw"/>
+      <ns xmi:type="net.sf.ictalive.operetta:NS" xmi:id="_RO_NlhZiEeS0xuVGn_VuJw">
+        <norms xmi:type="net.sf.ictalive.operetta:Norm" xmi:id="_jvyakUo8EeSYmriNaHFpEw" normID="test" activationCondition="_LnSacEpFEeSYmriNaHFpEw">
+          <deontics xmi:type="net.sf.ictalive.operetta:RoleDeonticStatement" xmi:id="_1KZzIEpDEeSYmriNaHFpEw" role="_Lj3-QBb5EeS4lNRigPBnKA"/>
+        </norms>
+      </ns>
+      <cs xmi:type="net.sf.ictalive.operetta:CS" xmi:id="_RO_NlxZiEeS0xuVGn_VuJw">
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_p3AMgBjQEeSnSvmQUSrHxg" predicate="StoreWW" concept="_f46GQBcQEeS5KY8C7DOwFg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_8a6zoBjQEeSnSvmQUSrHxg" predicate="WWStored" concept="_8a_sIBjQEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_PmQnIBjREeSnSvmQUSrHxg" predicate="WWStored" concept="_8a_sIBjQEeSnSvmQUSrHxg" arguments="_PmIrUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_PmcNUBjREeSnSvmQUSrHxg" predicate="isIndustrialWW" concept="_Pmf3sBjREeSnSvmQUSrHxg" arguments="_PmIrUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:PathConjunction" xmi:id="_PmnMcBjREeSnSvmQUSrHxg" leftPathFormula="_PmQnIBjREeSnSvmQUSrHxg" rightPathFormula="_PmcNUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_pDtR4BjREeSnSvmQUSrHxg" predicate="isIndustrialWW" concept="_Pmf3sBjREeSnSvmQUSrHxg" arguments="_pDl9IBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_pD4RABjREeSnSvmQUSrHxg" predicate="profitProduced" concept="_pD77YBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:PathConjunction" xmi:id="_pD_lwBjREeSnSvmQUSrHxg" leftPathFormula="_pDtR4BjREeSnSvmQUSrHxg" rightPathFormula="_pD4RABjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_tlc-wBjREeSnSvmQUSrHxg" predicate="profitProduced" concept="_pD77YBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_zlU2gBjREeSnSvmQUSrHxg" predicate="isIndustrialWW" concept="_Pmf3sBjREeSnSvmQUSrHxg" arguments="_zlNhwBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_zlf1oBjREeSnSvmQUSrHxg" predicate="profitProduced" concept="_pD77YBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:PathConjunction" xmi:id="_zlnKYBjREeSnSvmQUSrHxg" leftPathFormula="_zlU2gBjREeSnSvmQUSrHxg" rightPathFormula="_zlf1oBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_3cQEwBjREeSnSvmQUSrHxg" predicate="isHouseholdWW" concept="_3cTvIBjREeSnSvmQUSrHxg" arguments="_3cIwABjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_AV9QYBjSEeSnSvmQUSrHxg" predicate="WWTreated" concept="_AWBh0BjSEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_CmZpABjSEeSnSvmQUSrHxg" predicate="MeteoDataObtained" concept="_CmdTYBjSEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_PBX78BjSEeSnSvmQUSrHxg" predicate="WWVolumeObtained" concept="_PBbmUBjSEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_VvFxIBjSEeSnSvmQUSrHxg" predicate="WWPolllutantConcentrationObtained" concept="_VvLQsBjSEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_m9YpIBjSEeSnSvmQUSrHxg" predicate="WWPollutantConcentrationObtained" concept="_m9eIsBjSEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_m9hzEBjSEeSnSvmQUSrHxg" predicate="WWVolumeObtained" concept="_PBbmUBjSEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Conjunction" xmi:id="_m9pH0BjSEeSnSvmQUSrHxg" leftStateFormula="_m9YpIBjSEeSnSvmQUSrHxg" rightStateFormula="_m9hzEBjSEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_pdZHwBjSEeSnSvmQUSrHxg" predicate="WWPollutantConcentrationObtained" concept="_m9eIsBjSEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_pdhDkBjSEeSnSvmQUSrHxg" predicate="WWVolumeObtained" concept="_PBbmUBjSEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Conjunction" xmi:id="_pdnxQBjSEeSnSvmQUSrHxg" leftStateFormula="_pdZHwBjSEeSnSvmQUSrHxg" rightStateFormula="_pdhDkBjSEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_4RRLwBjSEeSnSvmQUSrHxg" predicate="WWPollutantConcentrationObtained" concept="_m9eIsBjSEeSnSvmQUSrHxg" arguments="_PmIrUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_4RcK4BjSEeSnSvmQUSrHxg" predicate="WWVolumeObtained" concept="_PBbmUBjSEeSnSvmQUSrHxg" arguments="_PmIrUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Conjunction" xmi:id="_4RnKABjSEeSnSvmQUSrHxg" leftStateFormula="_4RRLwBjSEeSnSvmQUSrHxg" rightStateFormula="_4RcK4BjSEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_4RyJIBjSEeSnSvmQUSrHxg" predicate="isEffluent" concept="_4R1zgBjSEeSnSvmQUSrHxg" arguments="_PmIrUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:PathConjunction" xmi:id="_4R-WYBjSEeSnSvmQUSrHxg" leftPathFormula="_4RnKABjSEeSnSvmQUSrHxg" rightPathFormula="_4RyJIBjSEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_8dYm4BjSEeSnSvmQUSrHxg" predicate="WWPolllutantConcentrationObtained" concept="_VvLQsBjSEeSnSvmQUSrHxg" arguments="_PmIrUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_C1LPYBjTEeSnSvmQUSrHxg" predicate="isInffluent" concept="_C1O5wBjTEeSnSvmQUSrHxg" arguments="_PmIrUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:PathConjunction" xmi:id="_C1WOgBjTEeSnSvmQUSrHxg" leftPathFormula="_4RnKABjSEeSnSvmQUSrHxg" rightPathFormula="_C1LPYBjTEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_T2KrMBjTEeSnSvmQUSrHxg" predicate="isEfficent" concept="_T2OVkBjTEeSnSvmQUSrHxg" arguments="_T18BsBjTEeSnSvmQUSrHxg _T2DWcBjTEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_33ar4BjTEeSnSvmQUSrHxg" predicate="isMeteoWW" concept="_33eWQBjTEeSnSvmQUSrHxg" arguments="_PmIrUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:PathConjunction" xmi:id="_33mSEBjTEeSnSvmQUSrHxg" leftPathFormula="_4RnKABjSEeSnSvmQUSrHxg" rightPathFormula="_33ar4BjTEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_-8VgIBjTEeSnSvmQUSrHxg" predicate="bypassOpened" concept="_-8ZKgBjTEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_EcAN0BjUEeSnSvmQUSrHxg" predicate="bypassOpened" concept="_-8ZKgBjTEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_EcJXwBjUEeSnSvmQUSrHxg" predicate="dischargedInRiver" concept="_EcNCIBjUEeSnSvmQUSrHxg" arguments="_PmIrUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:PathConjunction" xmi:id="_EcUW4BjUEeSnSvmQUSrHxg" leftPathFormula="_EcAN0BjUEeSnSvmQUSrHxg" rightPathFormula="_EcJXwBjUEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_KJBbABjUEeSnSvmQUSrHxg" predicate="isTreated" concept="_KJFFYBjUEeSnSvmQUSrHxg" arguments="_PmIrUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Conjunction" xmi:id="_KJOPUBjUEeSnSvmQUSrHxg" leftStateFormula="_EcJXwBjUEeSnSvmQUSrHxg" rightStateFormula="_KJBbABjUEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_PEwVMBjUEeSnSvmQUSrHxg" predicate="isHouseholdWW" concept="_3cTvIBjREeSnSvmQUSrHxg" arguments="_PmIrUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_PE9JgBjUEeSnSvmQUSrHxg" predicate="dischargedInSewer" concept="_PFAz4BjUEeSnSvmQUSrHxg" arguments="_PmIrUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Conjunction" xmi:id="_PFIIoBjUEeSnSvmQUSrHxg" leftStateFormula="_PEwVMBjUEeSnSvmQUSrHxg" rightStateFormula="_PE9JgBjUEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_3Iod0BjUEeSnSvmQUSrHxg" predicate="isSensor" concept="_3IsIMBjUEeSnSvmQUSrHxg" arguments="_3IgiABjUEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_3Izc8BjUEeSnSvmQUSrHxg" predicate="sensorDataCollected" concept="_3I3HUBjUEeSnSvmQUSrHxg" arguments="_3IgiABjUEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Conjunction" xmi:id="_3I-cEBjUEeSnSvmQUSrHxg" leftStateFormula="_3Iod0BjUEeSnSvmQUSrHxg" rightStateFormula="_3Izc8BjUEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_UZcsgBjVEeSnSvmQUSrHxg" predicate="riverSensorsReaded" concept="_UZiMEBjVEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_UZmdgBjVEeSnSvmQUSrHxg" predicate="qualityValuesValidated" concept="_UZqH4BjVEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_UZtyQBjVEeSnSvmQUSrHxg" predicate="qualityIndexCalculated" concept="_UZxcoBjVEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Conjunction" xmi:id="_UZ1HABjVEeSnSvmQUSrHxg" leftStateFormula="_UZcsgBjVEeSnSvmQUSrHxg" rightStateFormula="_UZmdgBjVEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Conjunction" xmi:id="_UaAGIBjVEeSnSvmQUSrHxg" leftStateFormula="_UZ1HABjVEeSnSvmQUSrHxg" rightStateFormula="_UZtyQBjVEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_eq3R8BjVEeSnSvmQUSrHxg" predicate="DischargePricesCalculated" concept="_eq68UBjVEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_o1mAkBjVEeSnSvmQUSrHxg" predicate="reservedCostCalculated" concept="_o1pD4BjVEeSnSvmQUSrHxg" arguments="_o1O0MBjVEeSnSvmQUSrHxg _o1Vh4BjVEeSnSvmQUSrHxg _o1c2oBjVEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_wFQFMBjVEeSnSvmQUSrHxg" predicate="VolumetricDischargeCalculated" concept="_wFTvkBjVEeSnSvmQUSrHxg" arguments="_PmIrUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Conjunction" xmi:id="_wFadQBjVEeSnSvmQUSrHxg" leftStateFormula="_wFQFMBjVEeSnSvmQUSrHxg" rightStateFormula="_PmcNUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_3NkLsBjVEeSnSvmQUSrHxg" predicate="dischargeInSewer" concept="_EdWq4BciEeS5KY8C7DOwFg" arguments="_PmIrUBjREeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Conjunction" xmi:id="_3NujwBjVEeSnSvmQUSrHxg" leftStateFormula="_PmcNUBjREeSnSvmQUSrHxg" rightStateFormula="_3NkLsBjVEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_B2kxwBjWEeSnSvmQUSrHxg" predicate="dischargeInSewer" concept="_EdWq4BciEeS5KY8C7DOwFg" arguments="_B2X9cBjWEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Conjunction" xmi:id="_B2vJ0BjWEeSnSvmQUSrHxg" leftStateFormula="_PmcNUBjREeSnSvmQUSrHxg" rightStateFormula="_B2kxwBjWEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_Hg0XwBjWEeSnSvmQUSrHxg" predicate="MeteoDestinationEvaluated" concept="_Hg4CIBjWEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Conjunction" xmi:id="_QD9dgBjWEeSnSvmQUSrHxg" leftStateFormula="_33ar4BjTEeSnSvmQUSrHxg" rightStateFormula="_3NkLsBjVEeSnSvmQUSrHxg"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_LmiMgEpFEeSYmriNaHFpEw" predicate="IsWater" concept="_LmphQEpFEeSYmriNaHFpEw" arguments="_Ll9kwEpFEeSYmriNaHFpEw"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Negation" xmi:id="_Lm1HcEpFEeSYmriNaHFpEw" stateFormula="_LmiMgEpFEeSYmriNaHFpEw"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_Lm-RYEpFEeSYmriNaHFpEw" predicate="Polluted" concept="_LnICYEpFEeSYmriNaHFpEw" arguments="_Ll9kwEpFEeSYmriNaHFpEw"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Conjunction" xmi:id="_LnSacEpFEeSYmriNaHFpEw" leftStateFormula="_Lm1HcEpFEeSYmriNaHFpEw" rightStateFormula="_Lm-RYEpFEeSYmriNaHFpEw"/>
+        <formulas xmi:type="net.sf.ictalive.operetta:Atom" xmi:id="_xLc4AEpIEeSYmriNaHFpEw" predicate="Discrimination" concept="_xLgiYEpIEeSYmriNaHFpEw"/>
+        <ontology xmi:type="net.sf.ictalive.operetta:Ontology" xmi:id="_RO_NmBZiEeS0xuVGn_VuJw" ontologyID="Default">
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_jEaXABZiEeS0xuVGn_VuJw" concept="WWGenerator"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_ofopkBZiEeS0xuVGn_VuJw" concept="WWRetainer"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_qQnfABZiEeS0xuVGn_VuJw" concept="WWTreater"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_rD5WEBZiEeS0xuVGn_VuJw" concept="WWQualityManager"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_sSP_kBZiEeS0xuVGn_VuJw" concept="MeteoDataProvider"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_uDBZoBZiEeS0xuVGn_VuJw" concept="MeteoDataAcquirer"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_u7qR0BZiEeS0xuVGn_VuJw" concept="WWDataAcquie"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_2ni_cBZiEeS0xuVGn_VuJw" concept="WWDataAcquirer"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_9su5cBZiEeS0xuVGn_VuJw" concept="HouseholdWWDischarger"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_A1DVQBZjEeS0xuVGn_VuJw" concept="IndustrialWWDischarger"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_ZuukkBZjEeS0xuVGn_VuJw" concept="MeteoWWDischarger"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_bKcUoBZjEeS0xuVGn_VuJw" concept="WaterQualityAcquirer"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_cqZ5QBZoEeS0xuVGn_VuJw" concept="WWDischarger"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_jk4GIBZqEeS0xuVGn_VuJw" concept="HouseholdWWGenerator"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_nyAN4BZqEeS0xuVGn_VuJw" concept="IndustrialWWGenerator"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_e-TuMBZrEeS0xuVGn_VuJw" concept="Meteo"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_Bz9-IBZvEeS0xuVGn_VuJw" concept="WWGeneration"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_dEfJABZvEeS0xuVGn_VuJw" concept="ProduceProducts"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_4XiDcBZvEeS0xuVGn_VuJw" concept="MakeProfit"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_4CZrgBZwEeS0xuVGn_VuJw" concept="HouseholdWWGeneration"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_6itsIBZwEeS0xuVGn_VuJw" concept="IndustrialWWGeneration"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_YUsHIBZxEeS0xuVGn_VuJw" concept="AssessRiverWaterQuality"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_c5mcwBZxEeS0xuVGn_VuJw" concept="CollectRiverSensorsData"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_rgz9wBZxEeS0xuVGn_VuJw" concept="Com"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_Wtr3oBZyEeS0xuVGn_VuJw" concept="SetP"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_fRmZcBZyEeS0xuVGn_VuJw" concept="SetWWTPEffluentLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_fIE0kBZzEeS0xuVGn_VuJw" concept="WWTreatment"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_xRcNsBZzEeS0xuVGn_VuJw" concept="KnowEffluentLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_1Re7sBZzEeS0xuVGn_VuJw" concept="EvaluateWWTPInfluent"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_l_aqYBZ0EeS0xuVGn_VuJw" concept="SetWWTPInfluentLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_MyjX4Bb5EeS4lNRigPBnKA" concept="WWReceiver"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_b-SQUBb7EeS4lNRigPBnKA" concept="TreatementPerformanceDataAcquirer"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_EqEGcBb8EeS4lNRigPBnKA" concept="WaterQualityManager"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_ZlbtIBb8EeS4lNRigPBnKA" concept="AchieveQualityWater"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_PNyHYBb9EeS4lNRigPBnKA" concept=""/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_T2btgBb9EeS4lNRigPBnKA" concept="AchieveOptimalPerformance"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_Yu4qMBb9EeS4lNRigPBnKA" concept="AssessTreatementPerformance"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_U-0ccBb-EeS4lNRigPBnKA" concept="AcquireMeteorologicalData"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_szxzgBcLEeS5KY8C7DOwFg" concept="ProvideMeteoData"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_QZpfwBcMEeS5KY8C7DOwFg" concept="ObtainMeteoData"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_bO_cMBcNEeS5KY8C7DOwFg" concept="AskWWTPInfluentUnderLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_1FGekBcNEeS5KY8C7DOwFg" concept="ManageWWTPInfluents"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_bPFGUBcOEeS5KY8C7DOwFg" concept="ManageWWInfluents"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_O_a2EBcPEeS5KY8C7DOwFg" concept="DetermineDischargePrices"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="__GgnMBcPEeS5KY8C7DOwFg" concept="DetermineWWInfluentLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_f46GQBcQEeS5KY8C7DOwFg" concept="StoreWW"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_ndslABceEeS5KY8C7DOwFg" concept="Inspector"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_yqnJYBceEeS5KY8C7DOwFg" concept="SewageInspector"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_IAOcEBcfEeS5KY8C7DOwFg" concept="VerifyDischarges"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_Mv-vwBcfEeS5KY8C7DOwFg" concept="d"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_Sy7JoBcfEeS5KY8C7DOwFg" concept="checkDischargesVolume"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_XL1DkBcfEeS5KY8C7DOwFg" concept="checkDischargesPollutantLoads"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_-gNB4BcfEeS5KY8C7DOwFg" concept="VerifyDischarge"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_AeodcBcgEeS5KY8C7DOwFg" concept="checkDischargeVolume"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_CkTwgBcgEeS5KY8C7DOwFg" concept="checkDischargePollutantLoads"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_IsRNQBcgEeS5KY8C7DOwFg" concept="obtainDischargeVolume"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_J8T40BcgEeS5KY8C7DOwFg" concept="obtainDischargePollutantLoads"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_SlyQEBcgEeS5KY8C7DOwFg" concept="obtainDischargeAgreement"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_EDUPsBchEeS5KY8C7DOwFg" concept="dischargeWW"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_29yucBchEeS5KY8C7DOwFg" concept="dischargeInRiver"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_EdWq4BciEeS5KY8C7DOwFg" concept="dischargeInSewer"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_t0DtUBciEeS5KY8C7DOwFg" concept="ObtainWWTPPerformanceData"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_8VqVkBciEeS5KY8C7DOwFg" concept="ObtainWWVolume"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="__u4UIBciEeS5KY8C7DOwFg" concept="ObtainWWPollutantConcentration"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_A7D2kBcnEeS5KY8C7DOwFg" concept="ObtainWWCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_CnuMsBcnEeS5KY8C7DOwFg" concept="ObtainWWComposition"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_79es0BcnEeS5KY8C7DOwFg" concept="dischargeMeteoWWInSewer"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_J5dqEBcpEeS5KY8C7DOwFg" concept="DischargeIndustrialWW"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_cIxTIBcpEeS5KY8C7DOwFg" concept="ObtainDischargeCost"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_IaLhQBcsEeS5KY8C7DOwFg" concept="EstablishDischargeReferencePrice"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_a6ygQBctEeS5KY8C7DOwFg" concept="ObtainDischargeReferencePrice"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_l4byMBcwEeS5KY8C7DOwFg" concept="ObtainPerformanceData"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_xmQZUBcyEeS5KY8C7DOwFg" concept="ObtainHouseholdWWCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_atNvkBczEeS5KY8C7DOwFg" concept="ObtainMeteoWWCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_744qQBczEeS5KY8C7DOwFg" concept="DetermineIndustrialWWInfluentLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_b9w8ABc0EeS5KY8C7DOwFg" concept="ObtainSaturationDegree"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_l-kSkBc0EeS5KY8C7DOwFg" concept="ObtainVolumetricSaturationDegree"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_5ulqwBfUEeSkadyOqDMLMw" concept="WWTPDischarger"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_9T3vYBfUEeSkadyOqDMLMw" concept="CalculateTreatementEfficiency"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="__quSABfUEeSkadyOqDMLMw" concept="ObtainInfluentCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_HXKZQBfVEeSkadyOqDMLMw" concept="ObtainEffluentCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_kDQKQBfVEeSkadyOqDMLMw" concept="dischargeTreatedWW"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_84DgoBfVEeSkadyOqDMLMw" concept="dischargeBypass"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_nYdWEBfWEeSkadyOqDMLMw" concept="processInfluent"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_tr4b8BfWEeSkadyOqDMLMw" concept="treatInfluent"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_xZFGcBfWEeSkadyOqDMLMw" concept="bypassInfluent"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_baF0sBfYEeSkadyOqDMLMw" concept="setPollutantLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_heTZ4BfYEeSkadyOqDMLMw" concept="ObtainWaterCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_Z8C3cBfaEeSkadyOqDMLMw" concept="EnsureWWTPEffluentLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_tHFeEBfcEeSkadyOqDMLMw" concept="CalculateWWTPEffluentLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_1IcFYBfcEeSkadyOqDMLMw" concept="EnsureEffluentLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_Ff9woBfhEeSkadyOqDMLMw" concept="MeteoWWRetainer"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_JUB4IBfhEeSkadyOqDMLMw" concept="MeteoRetainer"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_L0SOYBfhEeSkadyOqDMLMw" concept="IndustrialWWRetainer"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_QrTAoBfhEeSkadyOqDMLMw" concept="MeteoDischarger"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_I5QLMBfiEeSkadyOqDMLMw" concept="EvaluateHouseholdWWGeneration"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_iPe-MBfjEeSkadyOqDMLMw" concept="ManageIndustrialWW"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_Km3RoBfkEeSkadyOqDMLMw" concept="StoreIndustrialWW"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_Oh_DYBfkEeSkadyOqDMLMw" concept="dischargeIndustrialWW"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_5LQ2EBfmEeSkadyOqDMLMw" concept="RiverQualityManager"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_NEEzkBfnEeSkadyOqDMLMw" concept="AssessIndustrialWWDischarge"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_SKG5QBfnEeSkadyOqDMLMw" concept="AssessAmountOfIndustrialWWDischarge"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_UoJMgBfoEeSkadyOqDMLMw" concept="DischargeHouseholdWW"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_MQFqgBfqEeSkadyOqDMLMw" concept="DischargeMeteoWW"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_opEc0BfrEeSkadyOqDMLMw" concept="StoreMeteoWater"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_X9NuEBfsEeSkadyOqDMLMw" concept="AssessMeteoWWDestination"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_RqPBMBf5EeSkadyOqDMLMw" concept="EvaluateHouseholdWWCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_OLMSABf6EeSkadyOqDMLMw" concept="EvaluateMeteoWWCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_VjNBYBf6EeSkadyOqDMLMw" concept="DetermineWWInfluentAvailability"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_d5uAYBf6EeSkadyOqDMLMw" concept="ObtainWWInfluentLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_xCDjMBf6EeSkadyOqDMLMw" concept="DetermineIndustrialWWInfluentAvailability"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_CduI0Bf7EeSkadyOqDMLMw" concept="ObtainWWTotalLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_IEs_cBf7EeSkadyOqDMLMw" concept="CalculateIndustrialWWInfluentAvailability"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_OcYTMBf7EeSkadyOqDMLMw" concept="ObtainIndustrialWWCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_U3ECMBf8EeSkadyOqDMLMw" concept="ManageWWTPInfluent"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_uDq0kBf8EeSkadyOqDMLMw" concept="CalculateVolumetricSaturationDegree"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_6GH50Bf8EeSkadyOqDMLMw" concept="ObtainTreatmentEfficiency"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_FbczUBf9EeSkadyOqDMLMw" concept="CalculateIndustrialWWDischargePrices"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_HHCLYBf9EeSkadyOqDMLMw" concept="ObtainDischargeReferencePrices"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_jmToYBf9EeSkadyOqDMLMw" concept="TreatInfluent"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_zKDDEBf9EeSkadyOqDMLMw" concept="ObtainWWInfluentCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_gUXEkBf_EeSkadyOqDMLMw" concept="CollectWWInfluentCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_vzKU4Bf_EeSkadyOqDMLMw" concept="CollectIndustrialWWDischargeCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_6bV0gBf_EeSkadyOqDMLMw" concept="ProcessInfluent"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_ZXp7sBgAEeSkadyOqDMLMw" concept="EvaluateInfluentDestination"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_dXBUQBgAEeSkadyOqDMLMw" concept="Bypass"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_f_d9MBgAEeSkadyOqDMLMw" concept="BypassTreatment"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_vH_mEBgBEeSkadyOqDMLMw" concept="O"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_xVzhcBgBEeSkadyOqDMLMw" concept="CalculateTreatmentEfficiency"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_ZGb98BgCEeSkadyOqDMLMw" concept="ObtainWWTPEffluentLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_iZ004BgCEeSkadyOqDMLMw" concept="DischargeWW"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_rE2rUBgCEeSkadyOqDMLMw" concept="DischargeTreatedWW"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_H6PiQBgDEeSkadyOqDMLMw" concept="HouseholdDataProvider"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_YMtrMBgDEeSkadyOqDMLMw" concept="EvaluateRiverWaterQuality"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_itYNkBgDEeSkadyOqDMLMw" concept="CalculateWWTPNewEffluentLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_2sApwBgEEeSkadyOqDMLMw" concept="CalculateIndustrialWWAvailability"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_pRnEsBgFEeSkadyOqDMLMw" concept="CalculateIndustrialWWLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_BgEMwBgGEeSkadyOqDMLMw" concept="ObtainWWTPNewEffluentLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_npZUQBgGEeSkadyOqDMLMw" concept="VerifyDischargeAgreement"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_wEl-8BgGEeSkadyOqDMLMw" concept="ObtainIndustrialWWDischargeCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_0ggwoBgGEeSkadyOqDMLMw" concept="ObtainWWTPInfluentCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_gOjd4BgHEeSkadyOqDMLMw" concept="PutFine"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_WTQLABgKEeSkFuyStMykeA" concept="ObtainDischargeReservedCost"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_QWxTkBgMEeSkFuyStMykeA" concept="EvaluateQualityWater"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_cJiXABgMEeSkFuyStMykeA" concept="AssessQualityWater"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_eMcp8BgMEeSkFuyStMykeA" concept="CalculateRiverWaterQuality"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_kYlcEBgMEeSkFuyStMykeA" concept="EnforceWaterQualityPolicies"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_235QABgMEeSkFuyStMykeA" concept="VerifyWWTPEffluent"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_8a_sIBjQEeSnSvmQUSrHxg" concept="WWStored"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_PmMVsBjREeSnSvmQUSrHxg" concept="ww"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_Pmf3sBjREeSnSvmQUSrHxg" concept="isIndustrialWW"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_pD77YBjREeSnSvmQUSrHxg" concept="profitProduced"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_3cTvIBjREeSnSvmQUSrHxg" concept="isHouseholdWW"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_AWBh0BjSEeSnSvmQUSrHxg" concept="WWTreated"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_CmdTYBjSEeSnSvmQUSrHxg" concept="MeteoDataObtained"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_JkXgsBjSEeSnSvmQUSrHxg" concept="AchieveAdequatePerformance"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_PBbmUBjSEeSnSvmQUSrHxg" concept="WWVolumeObtained"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_VvLQsBjSEeSnSvmQUSrHxg" concept="WWPolllutantConcentrationObtained"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_m9eIsBjSEeSnSvmQUSrHxg" concept="WWPollutantConcentrationObtained"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_4R1zgBjSEeSnSvmQUSrHxg" concept="isEffluent"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_C1O5wBjTEeSnSvmQUSrHxg" concept="isInffluent"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_T1_sEBjTEeSnSvmQUSrHxg" concept="InfluentCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_T2HA0BjTEeSnSvmQUSrHxg" concept="EffluentCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_T2OVkBjTEeSnSvmQUSrHxg" concept="isEfficent"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_33eWQBjTEeSnSvmQUSrHxg" concept="isMeteoWW"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_-8ZKgBjTEeSnSvmQUSrHxg" concept="bypassOpened"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_EcNCIBjUEeSnSvmQUSrHxg" concept="dischargedInRiver"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_KJFFYBjUEeSnSvmQUSrHxg" concept="isTreated"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_PFAz4BjUEeSnSvmQUSrHxg" concept="dischargedInSewer"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_sX1NsBjUEeSnSvmQUSrHxg" concept="CollectRiverSensorData"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_3IkzcBjUEeSnSvmQUSrHxg" concept="s"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_3IsIMBjUEeSnSvmQUSrHxg" concept="isSensor"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_3I3HUBjUEeSnSvmQUSrHxg" concept="sensorDataCollected"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_UZiMEBjVEeSnSvmQUSrHxg" concept="riverSensorsReaded"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_UZqH4BjVEeSnSvmQUSrHxg" concept="qualityValuesValidated"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_UZxcoBjVEeSnSvmQUSrHxg" concept="qualityIndexCalculated"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_eq68UBjVEeSnSvmQUSrHxg" concept="DischargePricesCalculated"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_o1SekBjVEeSnSvmQUSrHxg" concept="referenceDischargePrice"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_o1ZMQBjVEeSnSvmQUSrHxg" concept="WWVolume"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_o1iWMBjVEeSnSvmQUSrHxg" concept="WWPollutantConcentration"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_o1pD4BjVEeSnSvmQUSrHxg" concept="reservedCostCalculated"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_wFTvkBjVEeSnSvmQUSrHxg" concept="VolumetricDischargeCalculated"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_Hg4CIBjWEeSnSvmQUSrHxg" concept="MeteoDestinationEvaluated"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_kKLQsEfwEeSRJYNxRRGnTQ" concept="ObtainDischargeReceiverPrices"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_fLH3UEihEeSMyvs0f1v9yA" concept="WSensor"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_OLeHMEjAEeSl_9oR-F4jKA" concept="RiverSensor"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_dICNIEjAEeSl_9oR-F4jKA" concept="LogWWCharacteristics"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_4NwdQEjAEeSl_9oR-F4jKA" concept="ObtainWWCharacteristicsLog"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_5owboEjAEeSl_9oR-F4jKA" concept="WWSensor"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_W0zFwEjGEeSl_9oR-F4jKA" concept="StoreIndustrialWW_"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_6NotMUonEeSIdPsWaTTbig" concept="ischargeBypass"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_7XAJAEonEeSIdPsWaTTbig" concept="DischargeBypass"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_8_1vEEonEeSIdPsWaTTbig" concept="DischargeInSewer"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_9uwqkEonEeSIdPsWaTTbig" concept="SetPollutantLimits"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_LmaQsEpFEeSYmriNaHFpEw" concept="W"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_LmphQEpFEeSYmriNaHFpEw" concept="IsWater"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_LnICYEpFEeSYmriNaHFpEw" concept="Polluted"/>
+          <classes xmi:type="net.sf.ictalive.operetta:Concept" xmi:id="_xLgiYEpIEeSYmriNaHFpEw" concept="Discrimination"/>
+        </ontology>
+        <terms xmi:type="net.sf.ictalive.operetta:Constant" xmi:id="_PmIrUBjREeSnSvmQUSrHxg" name="ww" concept="_PmMVsBjREeSnSvmQUSrHxg"/>
+        <terms xmi:type="net.sf.ictalive.operetta:Function" xmi:id="_pDl9IBjREeSnSvmQUSrHxg" name="WWGenerated"/>
+        <terms xmi:type="net.sf.ictalive.operetta:Function" xmi:id="_zlNhwBjREeSnSvmQUSrHxg" name="WWGenerated"/>
+        <terms xmi:type="net.sf.ictalive.operetta:Function" xmi:id="_3cIwABjREeSnSvmQUSrHxg" name="WWGenerated"/>
+        <terms xmi:type="net.sf.ictalive.operetta:Constant" xmi:id="_T18BsBjTEeSnSvmQUSrHxg" name="InfluentCharacteristics" concept="_T1_sEBjTEeSnSvmQUSrHxg"/>
+        <terms xmi:type="net.sf.ictalive.operetta:Constant" xmi:id="_T2DWcBjTEeSnSvmQUSrHxg" name="EffluentCharacteristics" concept="_T2HA0BjTEeSnSvmQUSrHxg"/>
+        <terms xmi:type="net.sf.ictalive.operetta:Constant" xmi:id="_3IgiABjUEeSnSvmQUSrHxg" name="s" concept="_3IkzcBjUEeSnSvmQUSrHxg"/>
+        <terms xmi:type="net.sf.ictalive.operetta:Constant" xmi:id="_o1O0MBjVEeSnSvmQUSrHxg" name="referenceDischargePrice" concept="_o1SekBjVEeSnSvmQUSrHxg"/>
+        <terms xmi:type="net.sf.ictalive.operetta:Constant" xmi:id="_o1Vh4BjVEeSnSvmQUSrHxg" name="WWVolume" concept="_o1ZMQBjVEeSnSvmQUSrHxg"/>
+        <terms xmi:type="net.sf.ictalive.operetta:Constant" xmi:id="_o1c2oBjVEeSnSvmQUSrHxg" name="WWPollutantConcentration" concept="_o1iWMBjVEeSnSvmQUSrHxg"/>
+        <terms xmi:type="net.sf.ictalive.operetta:Function" xmi:id="_B2X9cBjWEeSnSvmQUSrHxg" name="VolumetricDischargeCalculated" arguments="_PmIrUBjREeSnSvmQUSrHxg"/>
+        <terms xmi:type="net.sf.ictalive.operetta:Constant" xmi:id="_Ll9kwEpFEeSYmriNaHFpEw" name="W" concept="_LmaQsEpFEeSYmriNaHFpEw"/>
+        <countsAsRules xmi:type="net.sf.ictalive.operetta:CountsAs" xmi:id="_u2WB0EpIEeSYmriNaHFpEw" abstractFact="_xLc4AEpIEeSYmriNaHFpEw"/>
+      </cs>
+    </om>
+  </net.sf.ictalive.operetta:OperAModel>
+  <notation:Diagram xmi:id="_RPSvkBZiEeS0xuVGn_VuJw" type="SS" element="_RO_NkBZiEeS0xuVGn_VuJw" name="SS_Diagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_ndM8MBZiEeS0xuVGn_VuJw" type="2001" element="_nc7PYBZiEeS0xuVGn_VuJw" fontName="Lucida Grande" fontHeight="14">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ndM8MhZiEeS0xuVGn_VuJw" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_ndNjQBZiEeS0xuVGn_VuJw" type="5002"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ndM8MRZiEeS0xuVGn_VuJw" x="1422" y="342"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_ptSvgBZiEeS0xuVGn_VuJw" type="2001" element="_ptSIcBZiEeS0xuVGn_VuJw" fontName="Lucida Grande" fontHeight="14">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ptSvghZiEeS0xuVGn_VuJw" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_ptTWkBZiEeS0xuVGn_VuJw" type="5002"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ptSvgRZiEeS0xuVGn_VuJw" x="360" y="-80" width="126" height="55"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_26Fg8BZiEeS0xuVGn_VuJw" type="2001" element="_26E54BZiEeS0xuVGn_VuJw" fontName="Lucida Grande" fontHeight="14">
+      <children xmi:type="notation:DecorationNode" xmi:id="_26Fg8hZiEeS0xuVGn_VuJw" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_26GIABZiEeS0xuVGn_VuJw" type="5002"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_26Fg8RZiEeS0xuVGn_VuJw" x="528" y="-84"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_-bO-MBZiEeS0xuVGn_VuJw" type="2001" element="_-bOXIBZiEeS0xuVGn_VuJw" fontName="Lucida Grande" fontHeight="14">
+      <children xmi:type="notation:DecorationNode" xmi:id="_-bPlQBZiEeS0xuVGn_VuJw" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_-bPlQRZiEeS0xuVGn_VuJw" type="5002"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-bO-MRZiEeS0xuVGn_VuJw" x="1104" y="340"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_BLopQRZjEeS0xuVGn_VuJw" type="2001" element="_BLopQBZjEeS0xuVGn_VuJw" fontName="Lucida Grande" fontHeight="14">
+      <children xmi:type="notation:DecorationNode" xmi:id="_BLpQUBZjEeS0xuVGn_VuJw" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_BLpQURZjEeS0xuVGn_VuJw" type="5002"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BLopQhZjEeS0xuVGn_VuJw" x="752" y="344"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_aL3zkRZjEeS0xuVGn_VuJw" type="2001" element="_aL3zkBZjEeS0xuVGn_VuJw" fontName="Lucida Grande" fontHeight="14">
+      <children xmi:type="notation:DecorationNode" xmi:id="_aL4aoBZjEeS0xuVGn_VuJw" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_aL4aoRZjEeS0xuVGn_VuJw" type="5002"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_aL3zkhZjEeS0xuVGn_VuJw" x="1036" y="-48" width="225"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_kSgoMRZqEeS0xuVGn_VuJw" type="2001" element="_kSgoMBZqEeS0xuVGn_VuJw" fontName="Lucida Grande" fontHeight="14">
+      <children xmi:type="notation:DecorationNode" xmi:id="_kShPQBZqEeS0xuVGn_VuJw" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_kShPQRZqEeS0xuVGn_VuJw" type="5002"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kSgoMhZqEeS0xuVGn_VuJw" x="1412" y="160"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_LlCb4Bb5EeS4lNRigPBnKA" type="2001" element="_Lj3-QBb5EeS4lNRigPBnKA" fontName="Lucida Grande" fontHeight="14">
+      <children xmi:type="notation:DecorationNode" xmi:id="_LlDC8Bb5EeS4lNRigPBnKA" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_LlDC8Rb5EeS4lNRigPBnKA" type="5002"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LlCb4Rb5EeS4lNRigPBnKA" x="1080" y="180"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Xf5ZcBb7EeS4lNRigPBnKA" type="2001" element="_Xf4yYBb7EeS4lNRigPBnKA" fontName="Lucida Grande" fontHeight="14">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Xf6AgBb7EeS4lNRigPBnKA" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_Xf6AgRb7EeS4lNRigPBnKA" type="5002"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Xf5ZcRb7EeS4lNRigPBnKA" x="896" y="64"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_jThDkBceEeS5KY8C7DOwFg" type="2001" element="_jTM6gBceEeS5KY8C7DOwFg" fontName="Lucida Grande" fontHeight="14">
+      <children xmi:type="notation:DecorationNode" xmi:id="_jThqoBceEeS5KY8C7DOwFg" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_jThqoRceEeS5KY8C7DOwFg" type="5002"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jThDkRceEeS5KY8C7DOwFg" x="948" y="-128"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_P-V0ABfhEeSkadyOqDMLMw" type="2001" element="_P-VM8BfhEeSkadyOqDMLMw" fontName="Lucida Grande" fontHeight="14">
+      <children xmi:type="notation:DecorationNode" xmi:id="_P-V0AhfhEeSkadyOqDMLMw" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_P-V0AxfhEeSkadyOqDMLMw" type="5002"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P-V0ARfhEeSkadyOqDMLMw" x="744" y="268"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_ENqdcEjEEeSl_9oR-F4jKA" type="2001" element="_NXz1oUjAEeSl_9oR-F4jKA" fontName="Lucida Grande" fontHeight="14">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ENrEgEjEEeSl_9oR-F4jKA" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_ENrEgUjEEeSl_9oR-F4jKA" type="5002"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ENqdcUjEEeSl_9oR-F4jKA" x="1184" y="-128"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_ENrEgkjEEeSl_9oR-F4jKA" type="2001" element="_abkX8UihEeSMyvs0f1v9yA" fontName="Lucida Grande" fontHeight="14">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ENrEhEjEEeSl_9oR-F4jKA" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_ENrEhUjEEeSl_9oR-F4jKA" type="5002"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ENrEg0jEEeSl_9oR-F4jKA" x="776" y="180"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_RPSvkRZiEeS0xuVGn_VuJw"/>
+    <edges xmi:type="notation:Connector" xmi:id="_vqMHcEjFEeSl_9oR-F4jKA" type="4003" element="_vqLgYEjFEeSl_9oR-F4jKA" source="_aL3zkRZjEeS0xuVGn_VuJw" target="_ENrEgkjEEeSl_9oR-F4jKA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_vqMHc0jFEeSl_9oR-F4jKA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_vqMHdEjFEeSl_9oR-F4jKA" x="-54" y="8"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_vqMHcUjFEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vqMHckjFEeSl_9oR-F4jKA" points="[-2, 0, 212, -224]$[-214, 0, 0, -224]$[-214, 200, 0, -24]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lIkJsEjvEeS-6Ze16qExDg" id="(0.010050251256281407,0.5833333333333334)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_36UKkEjFEeSl_9oR-F4jKA" type="4003" element="_36TjgEjFEeSl_9oR-F4jKA" source="_ENqdcEjEEeSl_9oR-F4jKA" target="_aL3zkRZjEeS0xuVGn_VuJw">
+      <children xmi:type="notation:DecorationNode" xmi:id="_36UxoEjFEeSl_9oR-F4jKA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_36UxoUjFEeSl_9oR-F4jKA" x="-5" y="-59"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_36UKkUjFEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_36UKkkjFEeSl_9oR-F4jKA" points="[-8, 6, 89, -56]$[-17, 14, 80, -48]$[-17, 30, 80, -32]$[-37, 38, 60, -24]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_XcH88EjxEeS-6Ze16qExDg" id="(0.5126050420168067,0.875)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_8VEeoEjFEeSl_9oR-F4jKA" type="4003" element="_8VD3kEjFEeSl_9oR-F4jKA" source="_-bO-MBZiEeS0xuVGn_VuJw" target="_ENrEgkjEEeSl_9oR-F4jKA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_8VEeo0jFEeSl_9oR-F4jKA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_8VEepEjFEeSl_9oR-F4jKA" x="57" y="236"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_8VEeoUjFEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8VEeokjFEeSl_9oR-F4jKA" points="[0, 3, 424, 181]$[0, 51, 424, 229]$[-588, 51, -164, 229]$[-588, -178, -164, 0]$[-424, -178, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8VFswEjFEeSl_9oR-F4jKA" id="(0.47761194029850745,0.9375)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_h7jbIUjvEeS-6Ze16qExDg" id="(0.0,0.5625)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_-TM_QEjFEeSl_9oR-F4jKA" type="4003" element="_-TJU4EjFEeSl_9oR-F4jKA" source="_LlCb4Bb5EeS4lNRigPBnKA" target="_ENrEgkjEEeSl_9oR-F4jKA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_-TNmUEjFEeSl_9oR-F4jKA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_-TNmUUjFEeSl_9oR-F4jKA" x="28" y="8"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_-TM_QUjFEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_-TM_QkjFEeSl_9oR-F4jKA" points="[22, -1, -329, 7]$[331, 16, -20, 24]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_-TO0cEjFEeSl_9oR-F4jKA" id="(0.08333333333333333,0.5208333333333334)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_BW4ysUjGEeSl_9oR-F4jKA" type="4003" element="_BW4ysEjGEeSl_9oR-F4jKA" source="_26Fg8BZiEeS0xuVGn_VuJw" target="_ENrEgkjEEeSl_9oR-F4jKA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_BW5ZwEjGEeSl_9oR-F4jKA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_BW5ZwUjGEeSl_9oR-F4jKA" x="-35" y="-7"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_BW4yskjGEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BW4ys0jGEeSl_9oR-F4jKA" points="[12, 24, -159, -220]$[40, 76, -131, -168]$[40, 95, -131, -149]$[171, 95, 0, -149]$[171, 240, 0, -4]"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jT-moEjvEeS-6Ze16qExDg" id="(0.27835051546391754,0.08333333333333333)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_DsZ4kEjGEeSl_9oR-F4jKA" type="4003" element="_DsW1QEjGEeSl_9oR-F4jKA" source="_ptSvgBZiEeS0xuVGn_VuJw" target="_ENrEgkjEEeSl_9oR-F4jKA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_DsafoEjGEeSl_9oR-F4jKA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_DsafoUjGEeSl_9oR-F4jKA" x="10" y="-8"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_DsZ4kUjGEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DsZ4kkjGEeSl_9oR-F4jKA" points="[0, 1, -356, -234]$[109, 110, -247, -125]$[109, 126, -247, -109]$[243, 126, -113, -109]$[343, 222, -13, -13]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DsbtwEjGEeSl_9oR-F4jKA" id="(0.5793650793650794,0.9818181818181818)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SXsZwEjxEeS-6Ze16qExDg" id="(0.13402061855670103,0.6041666666666666)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_E4_AcUjGEeSl_9oR-F4jKA" type="4003" element="_E4_AcEjGEeSl_9oR-F4jKA" source="_P-V0ABfhEeSkadyOqDMLMw" target="_ENrEgkjEEeSl_9oR-F4jKA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_E4_ngEjGEeSl_9oR-F4jKA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_E4_ngUjGEeSl_9oR-F4jKA" x="-4" y="-68"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_E4_AckjGEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_E4_Ac0jGEeSl_9oR-F4jKA" points="[0, 0, -7, 64]$[4, -40, -3, 24]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6K2T4EjzEeS-6Ze16qExDg" id="(0.5324675324675324,0.08333333333333333)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_P9nLgUjGEeSl_9oR-F4jKA" type="4003" element="_P9nLgEjGEeSl_9oR-F4jKA" source="_ndM8MBZiEeS0xuVGn_VuJw" target="_kSgoMRZqEeS0xuVGn_VuJw">
+      <children xmi:type="notation:DecorationNode" xmi:id="_P9nykEjGEeSl_9oR-F4jKA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_P9nykUjGEeSl_9oR-F4jKA" x="24" y="-53"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_P9nLgkjGEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_P9nLg0jGEeSl_9oR-F4jKA" points="[-2, -24, 0, 142]$[-9, -156, -7, 10]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_kgFxEUjGEeSl_9oR-F4jKA" type="4003" element="_kgFxEEjGEeSl_9oR-F4jKA" source="_ndM8MBZiEeS0xuVGn_VuJw" target="_-bO-MBZiEeS0xuVGn_VuJw">
+      <children xmi:type="notation:DecorationNode" xmi:id="_kgGYIkjGEeSl_9oR-F4jKA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kgGYI0jGEeSl_9oR-F4jKA" y="11"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_kgGYIEjGEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kgGYIUjGEeSl_9oR-F4jKA" points="[-21, 0, 159, -3]$[-153, 4, 27, 1]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kgHmQEjGEeSl_9oR-F4jKA" id="(0.11475409836065574,0.5)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_kgHmQUjGEeSl_9oR-F4jKA" id="(0.8656716417910447,0.5625)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_rf0jUEjGEeSl_9oR-F4jKA" type="4003" element="_rfz8QEjGEeSl_9oR-F4jKA" source="_-bO-MBZiEeS0xuVGn_VuJw" target="_aL3zkRZjEeS0xuVGn_VuJw">
+      <children xmi:type="notation:DecorationNode" xmi:id="_rf0jU0jGEeSl_9oR-F4jKA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_rf0jVEjGEeSl_9oR-F4jKA" x="138" y="81"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_rf0jUUjGEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_rf0jUkjGEeSl_9oR-F4jKA" points="[1, -11, 0, 370]$[1, -351, 0, 30]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_rf1xcEjGEeSl_9oR-F4jKA" id="(0.7562189054726368,0.125)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_eaZ9sEjxEeS-6Ze16qExDg" id="(0.96,0.6875)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_00qy0EjGEeSl_9oR-F4jKA" type="4002" element="_00qLwEjGEeSl_9oR-F4jKA" source="_-bO-MBZiEeS0xuVGn_VuJw" target="_LlCb4Bb5EeS4lNRigPBnKA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_00rZ4EjGEeSl_9oR-F4jKA" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_00rZ4UjGEeSl_9oR-F4jKA" x="-40" y="-81"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_00qy0UjGEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_00qy0kjGEeSl_9oR-F4jKA" points="[-6, -10, 65, 131]$[-73, -133, -2, 8]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_00tPEEjGEeSl_9oR-F4jKA" id="(0.23383084577114427,0.14583333333333334)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_00tPEUjGEeSl_9oR-F4jKA" id="(0.6083333333333333,0.8125)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_8_4gwEjGEeSl_9oR-F4jKA" type="4003" element="_8_35sEjGEeSl_9oR-F4jKA" source="_LlCb4Bb5EeS4lNRigPBnKA" target="_aL3zkRZjEeS0xuVGn_VuJw">
+      <children xmi:type="notation:DecorationNode" xmi:id="_8_4gw0jGEeSl_9oR-F4jKA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_8_4gxEjGEeSl_9oR-F4jKA" x="70" y="-82"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_8_4gwUjGEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8_4gwkjGEeSl_9oR-F4jKA" points="[-2, -24, 9, 183]$[-11, -204, 0, 3]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cBV58EkEEeS-6Ze16qExDg" id="(0.6083333333333333,0.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8_6V8EjGEeSl_9oR-F4jKA" id="(0.5288888888888889,0.9583333333333334)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_ebNoEEjHEeSl_9oR-F4jKA" type="4003" element="_ebNBAEjHEeSl_9oR-F4jKA" source="_LlCb4Bb5EeS4lNRigPBnKA" target="_Xf5ZcBb7EeS4lNRigPBnKA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ebNoE0jHEeSl_9oR-F4jKA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_ebNoFEjHEeSl_9oR-F4jKA" x="-2" y="10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_ebNoEUjHEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ebNoEkjHEeSl_9oR-F4jKA" points="[-9, -5, 139, 69]$[-55, -31, 93, 43]$[-108, -31, 40, 43]$[-108, -45, 40, 29]$[-147, -73, 1, 1]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ebO2MEjHEeSl_9oR-F4jKA" id="(0.3333333333333333,0.125)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ebO2MUjHEeSl_9oR-F4jKA" id="(0.49673202614379086,0.9791666666666666)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_0cOoMEjHEeSl_9oR-F4jKA" type="4003" element="_0cOBIEjHEeSl_9oR-F4jKA" source="_P-V0ABfhEeSkadyOqDMLMw" target="_LlCb4Bb5EeS4lNRigPBnKA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_0cPPQEjHEeSl_9oR-F4jKA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_0cPPQUjHEeSl_9oR-F4jKA" x="-55" y="-8"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_0cOoMUjHEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0cOoMkjHEeSl_9oR-F4jKA" points="[4, 0, -225, 67]$[146, 0, -83, 67]$[146, -12, -83, 55]$[224, -64, -5, 3]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0cQdYEjHEeSl_9oR-F4jKA" id="(0.974025974025974,0.5)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7ye84EjvEeS-6Ze16qExDg" id="(0.35833333333333334,0.9375)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="__vgTQUjHEeSl_9oR-F4jKA" type="4003" element="__vgTQEjHEeSl_9oR-F4jKA" source="_BLopQRZjEeS0xuVGn_VuJw" target="_P-V0ABfhEeSkadyOqDMLMw">
+      <children xmi:type="notation:DecorationNode" xmi:id="__vg6UEjHEeSl_9oR-F4jKA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__vg6UUjHEeSl_9oR-F4jKA" x="-2" y="-58"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="__vgTQkjHEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__vgTQ0jHEeSl_9oR-F4jKA" points="[8, 1, -188, 0]$[168, 1, -28, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__viIcEjHEeSl_9oR-F4jKA" id="(0.48905109489051096,0.0)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__viIcUjHEeSl_9oR-F4jKA" id="(0.4805194805194805,0.9791666666666666)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_JT-6MEjIEeSl_9oR-F4jKA" type="4003" element="_JT-TIEjIEeSl_9oR-F4jKA" source="_jThDkBceEeS5KY8C7DOwFg" target="_aL3zkRZjEeS0xuVGn_VuJw">
+      <children xmi:type="notation:DecorationNode" xmi:id="_JT-6M0jIEeSl_9oR-F4jKA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_JT-6NEjIEeSl_9oR-F4jKA" x="-4" y="-8"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_JT-6MUjIEeSl_9oR-F4jKA" fontName="Lucida Grande"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_JT-6MkjIEeSl_9oR-F4jKA" points="[0, 2, -98, -32]$[0, 18, -98, -16]$[98, 18, 0, -16]$[98, 34, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JUAvYEjIEeSl_9oR-F4jKA" id="(0.5620915032679739,0.9583333333333334)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_JUAvYUjIEeSl_9oR-F4jKA" id="(0.4271356783919598,0.0)"/>
+    </edges>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_RPVy4BZiEeS0xuVGn_VuJw" type="IS" element="_RO_NkRZiEeS0xuVGn_VuJw" name="IS_Diagram" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_RPVy4RZiEeS0xuVGn_VuJw"/>
+  </notation:Diagram>
+</xmi:XMI>
