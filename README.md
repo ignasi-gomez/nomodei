@@ -113,7 +113,7 @@ Simulate activity in the complex scene by running:
 Or import our pre-generated data-set as seen in our publications by running:
 ```
  cd sotrasim
- python sotrasim.py
+ python loadSet.py
 ```
 
 ##TBD
